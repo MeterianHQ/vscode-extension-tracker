@@ -28,7 +28,7 @@ Use this repo to:
 We use labels and milestones to track progress. Subscribe to issues or milestones to get updates on fixes and releases.
 
 ### Labels we use
-- `bug`, `feature`, `question`, `needs-repro`, `accepted`, `wontfix`, `good-first-issue`, `blocked`, `in-progress`, `released`
+- `bug`, `feature`, `question`, `pending info`, `accepted`, `wontfix`, `good first issue`, `blocked`, `in-progress`, `released`
 - Security issues are **not** tracked here; use **security@meterian.io**.
 
 ## Contributing feedback
@@ -42,5 +42,8 @@ While the extension is closed source and this repository contains no code, your 
 - **Ask a question** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=question.yml&labels=question,needs-triage&title=%5BQUESTION%5D%20)
 
 ---
+<!-- commented out as not ready yet
 
 > ℹ️ You can also trigger “Meterian: Report a Bug / Request a Feature” from the VS Code Command Palette, which will open a pre-filled issue on this tracker.
+
+->
