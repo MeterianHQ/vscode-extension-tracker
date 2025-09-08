@@ -1,4 +1,4 @@
-# Meterian VS Code Extension — Public Issue Tracker
+# Meterian VS Code Extension - Public Issue Tracker
 
 This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can dnwloadd it from the [marketplace](https://plugins.jetbrains.com/plugin/20161-meterian-heidi/): it's completely free to use. 
 
@@ -20,14 +20,18 @@ Use this repo to:
   - **Logs** from VS Code: `Help → Toggle Developer Tools → Console`
   - Screenshots, if relevant
 
+## Quick links to file an issue
+- **Report a bug** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=bug_report.yml&labels=bug,needs-triage&title=%5BBUG%5D%20)
+- **Request a feature** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=feature_request.yml&labels=feature,needs-triage&title=%5BFEAT%5D%20)
+- **Ask a question** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=question.yml&labels=question,needs-triage&title=%5BQUESTION%5D%20)
+
+---
 ## Where to get help
 - **Discord (community support):** Join our public channel: <https://discord.gg/ZqXEBhpT>
 - **Docs/FAQ:** work in progress :)
 
 ## Roadmap & status
 We use labels and milestones to track progress. Subscribe to issues or milestones to get updates on fixes and releases.
-
-### Labels we use
 - `bug`, `feature`, `question`, `pending info`, `accepted`, `wontfix`, `good first issue`, `blocked`, `in-progress`, `released`
 - Security issues are **not** tracked here; use **security@meterian.io**.
 
@@ -36,12 +40,7 @@ While the extension is closed source and this repository contains no code, your 
 
 ---
 
-### Quick links
-- **Report a bug** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=bug_report.yml&labels=bug,needs-triage&title=%5BBUG%5D%20)
-- **Request a feature** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=feature_request.yml&labels=feature,needs-triage&title=%5BFEAT%5D%20)
-- **Ask a question** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=question.yml&labels=question,needs-triage&title=%5BQUESTION%5D%20)
 
----
 <!-- commented out as not ready yet
 
 > ℹ️ You can also trigger “Meterian: Report a Bug / Request a Feature” from the VS Code Command Palette, which will open a pre-filled issue on this tracker.
