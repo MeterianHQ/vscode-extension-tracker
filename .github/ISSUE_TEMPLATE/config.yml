@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: ⚠️ Security vulnerability disclosure
+    url: mailto:security@meterian.io
+    about: Please do not open a public issue for security vulnerabilities. Email us instead.
+  - name: 💬 Community Support (Discord)
+    url: https://discord.gg/ZqXEBhpT
+    about: Ask quick questions and get help from the team and community.
+  - name: 📚 Documentation
+    url: https://docs.meterian.com
+    about: Read guides, FAQs, and troubleshooting tips.

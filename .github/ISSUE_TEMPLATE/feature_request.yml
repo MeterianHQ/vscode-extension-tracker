@@ -1,0 +1,55 @@
+name: "💡 Feature request"
+description: Suggest an idea to improve the Meterian VS Code extension.
+title: "[FEAT] <short summary>"
+labels: ["feature", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for your idea! Help us understand the problem and the value.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem to solve
+      description: What problem are you trying to solve? Who is impacted?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Describe what you'd like to happen. Mockups welcome!
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Any alternative solutions or workarounds you’ve tried?
+  - type: dropdown
+    id: impact
+    attributes:
+      label: Impact
+      options:
+        - High – large productivity/safety win
+        - Medium – useful improvement
+        - Low – nice to have
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Out of scope / constraints
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: Bullet points that would make this “done” from your perspective.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true

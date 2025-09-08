@@ -1,0 +1,91 @@
+name: "🐛 Bug report"
+description: Report a reproducible problem with the Meterian VS Code extension.
+title: "[BUG] <short summary>"
+labels: ["bug", "needs-triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the fields below.
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - S1 - Crash / data loss / blocks usage
+        - S2 - Major issue / broken feature
+        - S3 - Minor issue / workaround exists
+        - S4 - Cosmetic / docs
+      description: How bad is this issue for you?
+    validations:
+      required: true
+  - type: input
+    id: extension_version
+    attributes:
+      label: Extension version
+      placeholder: v1.0.0
+    validations:
+      required: true
+  - type: input
+    id: vscode_version
+    attributes:
+      label: VS Code version
+      placeholder: "1.93.0"
+    validations:
+      required: true
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: "macOS 14.5 / Windows 11 / Ubuntu 22.04"
+    validations:
+      required: true
+  - type: input
+    id: ecosystem
+    attributes:
+      label: Language & package manager
+      placeholder: "Java + Maven/Gradle, JavaScript + npm/pnpm, Python + pip/poetry, etc."
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Tell us exactly how to reproduce the problem.
+      placeholder: |
+        1. Open ...
+        2. Run ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant logs / console output
+      description: Paste logs from VS Code (Help → Toggle Developer Tools → Console). Redact sensitive info.
+      render: shell
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots
+      description: If applicable, add screenshots to help explain your problem.
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Checks
+      options:
+        - label: I searched existing issues and did not find a duplicate.
+          required: true
+        - label: This is **not** a security vulnerability (if it is, email security@meterian.io).
+          required: true
