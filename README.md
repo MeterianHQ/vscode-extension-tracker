@@ -1,7 +1,6 @@
 # Meterian VS Code Extension - Public Issue Tracker
 
-This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can dnwloadd it from the [marketplace](Now with the correct link :)
-https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi): it's completely free to use. 
+This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can dnwloadd it from the [marketplace](https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi): it's completely free to use. 
 
 Use this repo to:
 - **Report bugs** (with logs, repro steps, and environment details)
