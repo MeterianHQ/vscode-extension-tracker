@@ -33,7 +33,7 @@ Use this repo to:
 
 ---
 ## Where to get help
-- **Discord (community support):** Join our public channel: <https://discord.gg/ZqXEBhpT>
+- **Discord (community support):** Join our public channel: <[https://discord.gg/ZqXEBhpT](https://discord.gg/mkAT9h3A)>
 - **Docs/FAQ:** work in progress :)
 
 ## Roadmap & status
