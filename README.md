@@ -2,7 +2,7 @@
 
 This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can download it from the [marketplace](https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi): it's completely free to use. 
 
-Alternatively, if you are using an alternative IDE (i.e. Cursor) you can download the extension directy [also via the marketplace](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/meterian/vsextensions/meterian-heidi/1.12.1/vspackage).
+Alternatively, if you are using an alternative IDE (i.e. Cursor) you can download directly [the vsix extension](https://marketplace.visualstudio.com/_apis/public/gallery/publishers/meterian/vsextensions/meterian-heidi/1.12.1/vspackage) also via the marketplace.
 
 ## How to use this repository
 
