@@ -1,7 +1,8 @@
 name: "🐛 Bug report"
 description: Report a reproducible problem with the Meterian VS Code extension.
 title: "[BUG] <short summary>"
-labels: ["bug", "needs-triage"]
+labels: ["needs-triage"]
+type: "Bug"
 assignees: []
 body:
   - type: markdown
