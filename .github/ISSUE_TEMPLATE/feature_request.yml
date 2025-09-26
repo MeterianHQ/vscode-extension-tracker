@@ -1,7 +1,8 @@
 name: "💡 Feature request"
 description: Suggest an idea to improve the Meterian VS Code extension.
 title: "[FEAT] <short summary>"
-labels: ["feature", "needs-triage"]
+labels: ["needs-triage"]
+type: "Feature"
 assignees: []
 body:
   - type: markdown
