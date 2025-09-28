@@ -31,16 +31,18 @@ Use this repo to:
 
 ---
 ## Where to get help
-- **Discord (community support):** Join our public channel: <[https://discord.gg/ZqXEBhpT](https://discord.gg/mkAT9h3A)>
+- **Discord (community support):** Join our public channel on [Discord](https://discord.gg/gHP9eaZdkp) 
 - **Docs/FAQ:** work in progress :)
 
+## What data is transferred by the plugin?
+The system is powered by the [Meterian Kiwi](https://www.meterian.io/product/kiwi/) vulnerability database. The APIs are called passing an opaque identifier as an authorization header; the data transferred is the name, version and language of a library. Additionally another API is called from [Meterian Heidi](https://www.meterian.io/product/heidi/) backend services, which is used to track activity. Any identity information is anonimized, encrypted with strong cypher, and cannot be decyphered.   
+
 ## Roadmap & status
-We use labels and milestones to track progress. Subscribe to issues or milestones to get updates on fixes and releases.
-- `bug`, `feature`, `question`, `pending info`, `accepted`, `wontfix`, `good first issue`, `blocked`, `in-progress`, `released`
-- Security issues are **not** tracked here; use **security@meterian.io**.
+We use types, labels and milestones to track progress. Subscribe to issues or milestones to get updates on fixes and releases.
+Security issues are **not** tracked here; use **security@meterian.io**.
 
 ## Contributing feedback
-While the extension is closed source and this repository contains no code, your feedback here directly shapes our backlog and priorities. the extention is completely free to use, we collect only fully anonymised data. 
+While the extension is closed source and this repository contains no code, your feedback here directly shapes our backlog and priorities. the extention is completely free to use.
 
 ---
 
