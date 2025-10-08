@@ -32,7 +32,8 @@ Use this repo to:
 ---
 ## Where to get help
 - **Discord (community support):** Join our public channel on [Discord](https://discord.gg/gHP9eaZdkp) 
-- **Docs/FAQ:** work in progress :)
+- **Documentation:** We are working hard on it, coming soon :) 
+- **FAQ:** See our [FAQ document](FAQ.md) 
 
 ## What data is transferred by the plugin?
 The system is powered by the [Meterian Kiwi](https://www.meterian.io/product/kiwi/) vulnerability database. The APIs are called passing an opaque identifier as an authorization header; the data transferred is the name, version and language of a library. Additionally another API is called from [Meterian Heidi](https://www.meterian.io/product/heidi/) backend services, which is used to track activity. Any identity information is anonimized, encrypted with strong cypher, and cannot be decyphered.   
