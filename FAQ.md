@@ -54,6 +54,21 @@ Just hit [the marketplace](https://marketplace.visualstudio.com/items?itemName=m
 
 ## 🔒 What about my privacy?
 
-We don’t want your data, not even your email.  
-We only see your IP briefly to guess your country (so we know which “hello” to imagine saying), and then we discard it.  
+We don’t want your data, not even your email, we transfer only name, version and language of libraries. We see your IP briefly to guess your country (so we know which “hello” to imagine saying), and then we discard it.  
 That’s it.
+
+---
+## 🧾 How do I collect logs for an issue?
+
+When something goes bump, attaching the extension log helps us fix it fast.
+
+- **Log file (Linux/macOS):**  
+  `~/.meterian/heidi/logs/application.log`
+  `%USERPROFILE%\.
+  - **Log file (Linux/macOS):**  
+meterian\heidi\logs\application.log`
+
+**How to attach:**
+1. Reproduce the problem.
+2. Grab the file above.
+3. Open a bug report and **drag & drop** the file into the issue, or paste its contents inside a fenced code block.
