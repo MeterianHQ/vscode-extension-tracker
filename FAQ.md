@@ -32,7 +32,7 @@ With the help of this guy you catch issues early, when fixes are still cheap and
 
 ## 🕵️ It doesn’t catch all vulnerabilities! `$tool` does a better job!
 
-While that can happen, it’s rare, we use one of the [largest vulnerability databases on the planet](https://www.meterian.io/product/vulnerability-data-feed/#:~:text=of%20repackaged%20assets.-,Maximum%20Coverage). Keep in mind though, the **free version** doesn’t have all the bells and whistles of the paid one. Well, at least until [this bad boy](https://github.com/MeterianHQ/vscode-extension-tracker/issues/2) is implemented!   
+While that can happen, it’s rare, we use one of the [largest vulnerability databases on the planet](https://www.meterian.io/product/vulnerability-data-feed/#:~:text=of%20repackaged%20assets.-,Maximum%20Coverage). Keep in mind though, the **free version** doesn’t have all the bells and whistles of the paid one. But we are improving constantly!
 Oh, and we usually skip non-production packages, because we know you’re too smart to deploy those anyway 😉  
 
 
@@ -64,9 +64,9 @@ When something goes bump, attaching the extension log helps us fix it fast.
 
 - **Log file (Linux/macOS):**  
   `~/.meterian/heidi/logs/application.log`
-  `%USERPROFILE%\.
-  - **Log file (Linux/macOS):**  
-meterian\heidi\logs\application.log`
+  
+- **Log file (Windows):**  
+  `%USERPROFILE%\.meterian\heidi\logs\application.log`
 
 **How to attach:**
 1. Reproduce the problem.
