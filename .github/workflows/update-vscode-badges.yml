@@ -57,7 +57,14 @@ jobs:
 
       - name: Commit changes (only if there are changes)
         run: |
-          if ! git diff --quiet -- badges; then
+          # Stage new/changed files
+          git add -A badges
+
+          # If nothing is staged, bail out
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi          if ! git diff --quiet -- badges; then
             git config user.name "github-actions[bot]"
             git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
             git add badges/*.json
