@@ -14,17 +14,17 @@
     </th>
   </tr>
   <tr>
-    <td align="center">
-      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-        <img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/visual-studio-marketplace/i/meterian.meterian-heidi?label=installs&logo=visual-studio-code&cacheSeconds=86400" />
-      </a>
-      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-        <img alt="Version" src="https://img.shields.io/visual-studio-marketplace/v/meterian.meterian-heidi?logo=visual-studio-code&cacheSeconds=86400" />
-      </a>
-      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-        <img alt="Rating" src="https://img.shields.io/visual-studio-marketplace/stars/meterian.meterian-heidi?logo=visual-studio-code&cacheSeconds=43200" />
-      </a>
-    </td>
+<td align="center">
+  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+    <img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-installs.json&logo=visual-studio-code&cacheSeconds=3600" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+    <img alt="Version" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-version.json&logo=visual-studio-code&cacheSeconds=3600" />
+  </a>
+  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+    <img alt="Rating" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-rating.json&logo=visual-studio-code&cacheSeconds=3600" />
+  </a>
+</td>
     <td align="center">
       <a href="https://open-vsx.org/extension/Meterian/meterian-heidi">
         <img alt="Open VSX Downloads" src="https://img.shields.io/open-vsx/dt/Meterian/meterian-heidi?cacheSeconds=86400" />
