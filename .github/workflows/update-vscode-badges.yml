@@ -29,13 +29,11 @@ jobs:
             --data '{"filters":[{"criteria":[{"filterType":7,"value":"'"$EXT"'"}]}],"flags":914}' \
           > resp.json
 
-          # Extract fields
           INST=$(jq -r '.results[0].extensions[0].statistics[] | select(.statisticName=="install").value' resp.json)
           AVG=$(jq -r '.results[0].extensions[0].statistics[] | select(.statisticName=="averagerating").value' resp.json)
           CNT=$(jq -r '.results[0].extensions[0].statistics[] | select(.statisticName=="ratingcount").value' resp.json)
           VER=$(jq -r '.results[0].extensions[0].versions[0].version' resp.json)
 
-          # Format numbers for display
           numfmt() { awk -v n="$1" 'BEGIN{
             if(n==""||n=="null"){print "n/a"; exit}
             if(n>=1000000) printf("%.1fm", n/1000000);
@@ -44,15 +42,27 @@ jobs:
           }'; }
 
           INST_MSG=$(numfmt "$INST")
-          AVG_MSG=$(awk -v a="${AVG:-0}" 'BEGIN{printf("%.1f", a+0)}')
-          CNT_MSG=$(numfmt "${CNT:-0}")
 
-          # Build endpoint JSONs (schemaVersion 1)
+          # --- Stars + green background for rating ---
+          # Round to nearest whole star (0–5) and print ★/☆
+          STAR_MSG=$(awk -v a="${AVG:-0}" 'BEGIN{
+            n=int(a+0.5); if(n<0)n=0; if(n>5)n=5;
+            for(i=0;i<5;i++) printf(i<n?"★":"☆");
+          }')
+          # Pick a green; use brightgreen for 4.5+ (you can force brightgreen if you prefer)
+          COLOR=$(awk -v a="${AVG:-0}" 'BEGIN{
+            if(a>=4.5) print "brightgreen";
+            else if(a>=4.0) print "green";
+            else if(a>=3.5) print "yellowgreen";
+            else if(a>=3.0) print "yellow";
+            else if(a>0)   print "orange";
+            else           print "lightgrey";
+          }')
+
           printf '{"schemaVersion":1,"label":"installs","message":"%s","color":"blue"}\n' "$INST_MSG" > badges/vscode-installs.json
           printf '{"schemaVersion":1,"label":"version","message":"%s","color":"informational"}\n' "$VER" > badges/vscode-version.json
-          printf '{"schemaVersion":1,"label":"rating","message":"%s/5 (%s)","color":"yellow"}\n' "$AVG_MSG" "$CNT_MSG" > badges/vscode-rating.json
+          printf '{"schemaVersion":1,"label":"rating","message":"%s","color":"%s"}\n' "$STAR_MSG" "$COLOR" > badges/vscode-rating.json
 
-          # Validate JSON
           jq empty badges/vscode-*.json
 
       - name: Commit changes (only if there are changes)
