@@ -16,13 +16,22 @@
   <tr>
 <td align="center">
   <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img alt="Visual Studio Marketplace Installs" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-installs.json&logo=visual-studio-code&cacheSeconds=3600" />
+    <img
+      alt="Visual Studio Marketplace Installs"
+      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-installs.json&logo=visual-studio-code&cacheSeconds=3600"
+    />
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img alt="Version" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-version.json&logo=visual-studio-code&cacheSeconds=3600" />
+    <img
+      alt="Version"
+      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-version.json&logo=visual-studio-code&cacheSeconds=3600"
+    />
   </a>
   <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img alt="Rating" src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/badges/vscode-rating.json&logo=visual-studio-code&cacheSeconds=3600" />
+    <img
+      alt="Rating"
+      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-rating.json&logo=visual-studio-code&cacheSeconds=3600"
+    />
   </a>
 </td>
     <td align="center">
