@@ -3,37 +3,51 @@
 <table>
   <tr>
     <th align="center">
+      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+        <img
+          alt="Visual Studio Code Marketplace logo"
+          src="https://code.visualstudio.com/assets/branding/code-stable.png"
+          height="48"
+        />
+      </a><br/>
       Available on the
       <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">Visual Studio Code Marketplace</a><br/>
       <sub>for Visual Studio Code</sub>
     </th>
     <th align="center">
+      <a href="https://open-vsx.org/extension/Meterian/meterian-heidi">
+        <img
+          alt="OpenVSX Registry logo"
+          src="https://outreach.eclipse.foundation/hs-fs/hubfs/OpenVSX-logo.png?height=117&amp;name=OpenVSX-logo.png&amp;width=369"
+          height="48"
+        />
+      </a><br/>
       Available on the
       <a href="https://open-vsx.org/extension/Meterian/meterian-heidi">OpenVSX registry</a><br/>
       <sub>for Cursor, VSCodium, Windsurf, Theia &amp; friends</sub>
     </th>
   </tr>
   <tr>
-<td align="center">
-  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img
-      alt="Visual Studio Marketplace Installs"
-      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-installs.json&logo=visual-studio-code&cacheSeconds=3600"
-    />
-  </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img
-      alt="Version"
-      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-version.json&logo=visual-studio-code&cacheSeconds=3600"
-    />
-  </a>
-  <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
-    <img
-      alt="Rating"
-      src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-rating.json&logo=visual-studio-code&cacheSeconds=3600"
-    />
-  </a>
-</td>
+    <td align="center">
+      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+        <img
+          alt="Visual Studio Marketplace Installs"
+          src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-installs.json&logo=visual-studio-code&cacheSeconds=3600"
+        />
+      </a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+        <img
+          alt="Version"
+          src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-version.json&logo=visual-studio-code&cacheSeconds=3600"
+        />
+      </a>
+      <a href="https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi">
+        <img
+          alt="Rating"
+          src="https://img.shields.io/endpoint?url=https://cdn.jsdelivr.net/gh/MeterianHQ/vscode-extension-tracker@main/badges/vscode-rating.json&logo=visual-studio-code&cacheSeconds=3600"
+        />
+      </a>
+    </td>
     <td align="center">
       <a href="https://open-vsx.org/extension/Meterian/meterian-heidi">
         <img alt="Open VSX Downloads" src="https://img.shields.io/open-vsx/dt/Meterian/meterian-heidi?cacheSeconds=86400" />
@@ -47,6 +61,7 @@
     </td>
   </tr>
 </table>
+
 
 This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can download it from the [marketplace](https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi): it's completely free to use. 
 
