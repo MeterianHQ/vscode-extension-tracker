@@ -10,7 +10,7 @@
     <th align="center">
       Available on the
       <a href="https://open-vsx.org/extension/Meterian/meterian-heidi">OpenVSX registry</a><br/>
-      <sub>for Cursor, VSCodium, Theia &amp; friends</sub>
+      <sub>for Cursor, VSCodium, Windsurf, Theia &amp; friends</sub>
     </th>
   </tr>
   <tr>
