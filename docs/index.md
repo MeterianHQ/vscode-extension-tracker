@@ -7,7 +7,7 @@
         <img
           alt="Visual Studio Code Marketplace logo"
           src="https://code.visualstudio.com/assets/branding/code-stable.png"
-          height="48"
+          style="height:48px;width:auto;"
         />
       </a><br/>
       Available on the
