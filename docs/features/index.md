@@ -1,6 +1,6 @@
 # Features
 
-Meterian Security is a **completely free** VS Code extension that detects open-source vulnerabilities in your project dependencies and helps you fix them — directly from your IDE, without leaving your editor.
+Here is a detailed overview of everything Meterian Security can do.
 
 ---
 
