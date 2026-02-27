@@ -10,7 +10,7 @@ Once connected, you can ask your AI things like:
 
 ## How it works
 
-When the extension activates, it automatically registers the MCP server with any supported AI tools it finds on your machine. No manual configuration needed.
+When the VS Code extension activates, it automatically registers the MCP server with any supported IDEs it finds on your machine (VS Code, Cursor, Windsurf). For AI CLI tools (Claude Code, Gemini CLI, Codex), use the VS Code commands below or the [standalone installer](#standalone-installation-without-vs-code).
 
 The server exposes two tools:
 
@@ -23,25 +23,69 @@ The server exposes two tools:
 
 | Tool | Integration method |
 |------|--------------------|
-| **Claude Code** | Auto-registered on extension activation |
+| **VS Code** (Copilot) | Config file updated automatically |
 | **Cursor** | Config file updated automatically |
 | **Windsurf** | Config file updated automatically |
-| **Gemini CLI** | Auto-registered on extension activation |
-| **Codex CLI** | Auto-registered on extension activation |
+| **Claude Code** | Via VS Code command or standalone installer |
+| **Gemini CLI** | Via VS Code command or standalone installer |
+| **Codex CLI** | Via VS Code command or standalone installer |
 
-## Commands
+## VS Code commands
+
+Use these from the Command Palette (`Ctrl+Shift+P`) to manually manage registration:
 
 | Command | Description |
 |---------|-------------|
-| `Register Meterian MCP on Claude Code` | Manually register with Claude Code |
+| `Register Meterian MCP on Claude Code` | Register with Claude Code |
 | `Unregister Meterian MCP from Claude Code` | Remove registration from Claude Code |
-| (similar commands for Gemini, Codex, Cursor, Windsurf) | |
+| `Register Meterian MCP on Gemini CLI` | Register with Gemini CLI |
+| `Unregister Meterian MCP from Gemini CLI` | Remove registration from Gemini CLI |
+| `Register Meterian MCP on Codex CLI` | Register with Codex CLI |
+| `Unregister Meterian MCP from Codex CLI` | Remove registration from Codex CLI |
 
-## Using without VS Code
+---
 
-A standalone installer is available for users who want to use the MCP server outside VS Code — for example, in a CI environment or with a CLI-only AI tool.
+## Standalone installation (without VS Code)
 
-See the [standalone installation guide](https://github.com/MeterianHQ/vscode-extension-tracker) for details.
+If you use AI CLI tools without VS Code, you can install the MCP server standalone using the installer script. It downloads the latest version from OpenVSX, smoke-tests it, and registers it with all AI CLIs it finds on your machine.
+
+### Prerequisites
+
+- `node` (any recent LTS version)
+- `unzip`
+- `curl` (for downloading from OpenVSX)
+
+### Install
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/scripts/install-meterian-mcp.sh | bash
+```
+
+Or download and run it yourself:
+
+```bash
+curl -sSfL https://raw.githubusercontent.com/MeterianHQ/vscode-extension-tracker/main/scripts/install-meterian-mcp.sh -o install-meterian-mcp.sh
+chmod +x install-meterian-mcp.sh
+./install-meterian-mcp.sh
+```
+
+The script will:
+
+1. Download the latest `.vsix` from [OpenVSX](https://open-vsx.org/extension/Meterian/meterian-heidi)
+2. Extract the MCP server files to `~/.meterian/mcp-server/`
+3. Run a smoke test to verify the server starts correctly
+4. Register the server with any AI CLIs found (`claude`, `gemini`, `codex`)
+
+### Uninstall
+
+```bash
+./install-meterian-mcp.sh --uninstall
+```
+
+This removes `~/.meterian/mcp-server/` and deregisters the server from all AI CLIs.
+
+
+---
 
 !!! note "Premium recommended"
     The MCP server works in Free mode, but Premium mode provides broader language coverage and more detailed advisory information.
