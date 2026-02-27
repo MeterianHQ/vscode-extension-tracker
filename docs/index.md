@@ -68,15 +68,6 @@ Meterian Security is a **completely free** extension that detects open-source vu
 It supports [10+ languages and package managers](languages.md), works with VS Code, Cursor, Windsurf, VSCodium, and Theia, and integrates with AI assistants via a built-in [MCP server](features/mcp-server.md), so you can ask your AI *"is any of my libraries vulnerable?"* and get an instant answer backed by the Meterian vulnerability database.
 
 
-## Install & Quickstart
-
-1. **Install** from your chosen marketplace (once!)
-2. Open a project
-3. An analysis starts automatically
-4. See the **report**, drill down into the details
-5. Use **autofix** to automatically resolve the issues!
-
-
 ## See it in action
 
 <div style="display:flex;gap:16px;flex-wrap:wrap;">
@@ -99,6 +90,15 @@ The extension ships a built-in [MCP server](features/mcp-server.md) that connect
 > *"What's a safe version for the axios library?"*
 
 Supported: **Claude Code**, **Cursor**, **Windsurf**, **VS Code + Copilot**, **Gemini CLI**, **Codex**.
+
+
+## Install & Quickstart
+
+1. **Install** from your chosen marketplace (once!)
+2. Open a project
+3. An analysis starts automatically
+4. See the **report**, drill down into the details
+5. Use **autofix** to automatically resolve the issues!
 
 
 ## Report an issue or request a feature
