@@ -1,0 +1,41 @@
+site_name: Meterian HEIDI - VS Code Extension
+site_description: Detect and fix open-source vulnerabilities directly in your IDE
+site_url: https://meterianHQ.github.io/vscode-extension-tracker/
+repo_url: https://github.com/MeterianHQ/vscode-extension-tracker
+repo_name: MeterianHQ/vscode-extension-tracker
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - search.highlight
+
+nav:
+  - Home: index.md
+  - Features: features.md
+  - Supported Languages: languages.md
+  - Commands: commands.md
+  - Configuration: configuration.md
+  - Roadmap: roadmap.md
+  - FAQ: faq.md
+
+markdown_extensions:
+  - tables
+  - admonition
+  - attr_list
+  - md_in_html
