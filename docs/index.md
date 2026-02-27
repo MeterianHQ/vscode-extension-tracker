@@ -63,9 +63,9 @@
 </table>
 
 
-Meterian Security is a **completely free** extension that detects open-source vulnerabilities in your project dependencies and helps you fix them — without leaving your IDE.
+Meterian Security is a **completely free** extension that detects open-source vulnerabilities in your project dependencies and helps you fix them, without leaving your IDE.
 
-It supports [10+ languages and package managers](languages.md), works with VS Code, Cursor, Windsurf, VSCodium, and Theia, and integrates with AI assistants via a built-in [MCP server](features/mcp-server.md) — so you can ask your AI *"is any of my libraries vulnerable?"* and get an instant answer backed by the Meterian vulnerability database.
+It supports [10+ languages and package managers](languages.md), works with VS Code, Cursor, Windsurf, VSCodium, and Theia, and integrates with AI assistants via a built-in [MCP server](features/mcp-server.md), so you can ask your AI *"is any of my libraries vulnerable?"* and get an instant answer backed by the Meterian vulnerability database.
 
 
 ## Install & Quickstart
@@ -75,6 +75,20 @@ It supports [10+ languages and package managers](languages.md), works with VS Co
 3. An analysis starts automatically
 4. See the **report**, drill down into the details
 5. Use **autofix** to automatically resolve the issues!
+
+
+## See it in action
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;">
+  <div style="flex:1;min-width:280px;">
+    <p><strong>English</strong></p>
+    <iframe width="100%" height="215" src="https://www.youtube.com/embed/RDuTWPBW-Z8" title="Meterian Security - English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div style="flex:1;min-width:280px;">
+    <p><strong>Italian</strong></p>
+    <iframe width="100%" height="215" src="https://www.youtube.com/embed/mzzdg8ZR13o" title="Meterian Security - Italian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
 
 
 ## Works with your AI assistant
