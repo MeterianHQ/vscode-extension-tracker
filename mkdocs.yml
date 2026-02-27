@@ -6,6 +6,8 @@ repo_name: MeterianHQ/vscode-extension-tracker
 
 theme:
   name: material
+  logo: assets/logo.svg
+  favicon: assets/logo.svg
   palette:
     - scheme: default
       primary: indigo
