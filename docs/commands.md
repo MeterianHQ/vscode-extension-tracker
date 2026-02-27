@@ -2,12 +2,44 @@
 
 All commands are available from the Visual Studio Command Palette (shortcut: `Ctrl+Shift+P` / `Cmd+Shift+P`).
 
+## Analysis
+
 | Command | Description |
 |---------|-------------|
-| `Analyse with Meterian` | Start a new analysis |
-| `Set Meterian API Token` | Set a new Meterian API token |
-| `Show my Meterian API Token` | Display the stored Meterian API token |
-| `Verify Meterian API Token` | Verify the validity of the stored Meterian API token |
-| `Unset Meterian API Token` | Remove the stored Meterian API token |
-| `Configure Meterian Security` | Shortcut to open the Meterian Security configuration |
-| `Enable or Disable Meterian Security on this workspace` | Stop Meterian Security from running on a specific workspace |
+| `Analyse with Meterian` | Start a new analysis manually |
+| `Open summary` | Open the summary report panel |
+| `Open quickfix panel` | Open the quick fix panel for the current file |
+
+## API Token
+
+| Command | Description |
+|---------|-------------|
+| `Set Meterian API Token` | Set a new Meterian API token to enable Premium mode |
+| `Show my Meterian API Token` | Display the currently stored API token |
+| `Verify Meterian API Token` | Check the validity of the stored API token |
+| `Unset Meterian API Token` | Remove the stored API token and return to Free mode |
+
+## Configuration & Workspace
+
+| Command | Description |
+|---------|-------------|
+| `Configure Meterian Security` | Shortcut to open the Meterian Security settings panel |
+| `Enable or Disable Meterian Security on this workspace` | Toggle the extension on or off for the current workspace |
+
+## Snoozing
+
+| Command | Description |
+|---------|-------------|
+| `Snooze Meterian notifications` | Snooze vulnerability notifications for a manifest file |
+| `Unsnooze Meterian notifications` | Re-enable previously snoozed notifications |
+
+## MCP Server
+
+| Command | Description |
+|---------|-------------|
+| `Register Meterian MCP server on Claude Code` | Register the MCP server with Claude Code |
+| `Unregister Meterian MCP server on Claude Code` | Remove the MCP server registration from Claude Code |
+| `Register Meterian MCP server on Gemini CLI` | Register the MCP server with Gemini CLI |
+| `Unregister Meterian MCP server on Gemini CLI` | Remove the MCP server registration from Gemini CLI |
+| `Register Meterian MCP server on Codex CLI` | Register the MCP server with Codex CLI |
+| `Unregister Meterian MCP server on Codex CLI` | Remove the MCP server registration from Codex CLI |
