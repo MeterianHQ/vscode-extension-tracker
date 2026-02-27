@@ -1,6 +1,6 @@
 site_name: Meterian HEIDI - VS Code Extension
 site_description: Detect and fix open-source vulnerabilities directly in your IDE
-site_url: https://meterianHQ.github.io/vscode-extension-tracker/
+site_url: https://meterianhq.github.io/vscode-extension-tracker/
 repo_url: https://github.com/MeterianHQ/vscode-extension-tracker
 repo_name: MeterianHQ/vscode-extension-tracker
 
