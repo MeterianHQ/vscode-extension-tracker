@@ -19,7 +19,7 @@
         <img
           alt="OpenVSX Registry logo"
           src="https://outreach.eclipse.foundation/hs-fs/hubfs/OpenVSX-logo.png?height=117&amp;name=OpenVSX-logo.png&amp;width=369"
-          height="48"
+          style="height:48px;width:auto;"
         />
       </a><br/>
       Available on the
