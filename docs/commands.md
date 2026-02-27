@@ -8,7 +8,6 @@ All commands are available from the Visual Studio Command Palette (shortcut: `Ct
 |---------|-------------|
 | `Analyse with Meterian` | Start a new analysis manually |
 | `Open summary` | Open the summary report panel |
-| `Open quickfix panel` | Open the quick fix panel for the current file |
 
 ## API Token
 
