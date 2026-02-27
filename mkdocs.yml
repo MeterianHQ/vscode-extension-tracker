@@ -27,7 +27,11 @@ theme:
 
 nav:
   - Home: index.md
-  - Features: features.md
+  - Features:
+    - Overview: features/index.md
+    - Autofix & Remediation: features/autofix.md
+    - Notifications & Snoozing: features/snoozing.md
+    - MCP Server: features/mcp-server.md
   - Supported Languages: languages.md
   - Commands: commands.md
   - Configuration: configuration.md
