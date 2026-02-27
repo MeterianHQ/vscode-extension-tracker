@@ -87,5 +87,23 @@ This removes `~/.meterian/mcp-server/` and deregisters the server from all AI CL
 
 ---
 
+## Useful prompts
+
+Here are some prompts to get the most out of the Meterian MCP server with your AI assistant.
+
+**Check for vulnerabilities:**
+> *"Are any of my project's dependencies currently vulnerable?"*
+
+**Get a safe version:**
+> *"What is the safest version I can upgrade axios to?"*
+
+**Triage by severity:**
+> *"List all critical and high severity vulnerabilities in this project."*
+
+**Fix all vulnerable dependencies within the patch version:**
+> *"Using the Meterian MCP server, check all dependencies in this project for known vulnerabilities. For each vulnerable dependency, get the next safe version and apply a fix — but only if the safe version is a patch-level upgrade (same major and minor version). Update the manifest files accordingly."*
+
+---
+
 !!! note "Premium recommended"
     The MCP server works in Free mode, but Premium mode provides broader language coverage and more detailed advisory information.

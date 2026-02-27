@@ -107,7 +107,7 @@ Remember: security issues are **not** tracked here; use **security@meterian.io**
 ---
 ## Where to get help
 - **Discord (community support):** [![Discord](https://img.shields.io/badge/Discord-join-blue?logo=discord&logoColor=white)](https://discord.gg/gHP9eaZdkp)
- - **Documentation:** We are working hard on it, coming soon :) 
+ - **Documentation:** Visit the [documentation website](https://meterianhq.github.io/vscode-extension-tracker/)
 - **FAQ:** See our [FAQ document](FAQ.md) 
 
 ## What data is transferred by the plugin?
