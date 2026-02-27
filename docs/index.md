@@ -1,4 +1,4 @@
-# Meterian VS Code Extension - Public Issue Tracker
+# Meterian Security — VS Code Extension
 
 <table>
   <tr>
@@ -63,57 +63,53 @@
 </table>
 
 
-This repository is the **public issue tracker** for the Meterian VS Code extension that detects and helps you fix open‑source vulnerabilities directly in your IDE. You can download it from the [marketplace](https://marketplace.visualstudio.com/items?itemName=meterian.meterian-heidi): it's completely free to use.
+Meterian Security is a **completely free** extension that detects open-source vulnerabilities in your project dependencies and helps you fix them — without leaving your IDE.
 
-Alternatively, if you are using an alternative IDE (i.e. Cursor) you can find it on the [open-vsx marketplace](https://open-vsx.org/extension/Meterian/meterian-heidi).
+It supports [10+ languages and package managers](languages.md), works with VS Code, Cursor, Windsurf, VSCodium, and Theia, and integrates with AI assistants via a built-in [MCP server](features/mcp-server.md) — so you can ask your AI *"is any of my libraries vulnerable?"* and get an instant answer backed by the Meterian vulnerability database.
 
 
 ## Install & Quickstart
-Super easy to use:
+
 1. **Install** from your chosen marketplace (once!)
-2. Open a project (if not open yet)
-3. An analysis starts automatically, if the project is supported :)
-4. See the **report**, drill down into the details if you want
+2. Open a project
+3. An analysis starts automatically
+4. See the **report**, drill down into the details
 5. Use **autofix** to automatically resolve the issues!
 
 
-## How to use this repository
+## Works with your AI assistant
 
-Use this repo to:
-- **Report bugs** (with logs, repro steps, and environment details)
-- **Request features** and improvements
-- **Ask usage questions**
+The extension ships a built-in [MCP server](features/mcp-server.md) that connects the Meterian vulnerability database to your AI assistant. Once registered, you can ask:
 
-> ⚠️ **Security disclosures**
-> Please **do not** file security vulnerabilities here. Email **security@meterian.io** with details and a way to reproduce. We'll acknowledge within 2 business days.
+> *"Is any of my libraries currently vulnerable?"*
+> *"What's a safe version for the axios library?"*
 
-## Before you file an issue
-- Search **open issues** to avoid duplicates.
-- Include:
-  - **Extension version** (e.g., `v1.2.3`) & **VS Code version** (e.g., `1.93.0`)
-  - **OS** (e.g., macOS 14.5 / Windows 11 / Ubuntu 22.04)
-  - **Project language & package manager** (e.g., Java + Maven/Gradle, JavaScript + npm/yarn/pnpm, Python + pip/poetry, etc.)
-  - **Reproduction steps** and **expected vs. actual behavior**
-  - **Logs** from VS Code: `Help → Toggle Developer Tools → Console`
-  - Screenshots, if relevant
+Supported: **Claude Code**, **Cursor**, **Windsurf**, **VS Code + Copilot**, **Gemini CLI**, **Codex**.
 
-## Quick links to file an issue
+
+## Report an issue or request a feature
+
+Found a bug, have a feature request, or a question? The [GitHub issue tracker](https://github.com/MeterianHQ/vscode-extension-tracker/issues) is the right place. Use one of the links below to open a pre-filled form:
+
 - **Report a bug** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=bug_report.yml&labels=bug,needs-triage&title=%5BBUG%5D%20)
 - **Request a feature** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=feature_request.yml&labels=feature,needs-triage&title=%5BFEAT%5D%20)
 - **Ask a question** → [Open form](https://github.com/MeterianHQ/vscode-extension-tracker/issues/new?template=question.yml&labels=question,needs-triage&title=%5BQUESTION%5D%20)
 
-Remember: security issues are **not** tracked here; use **security@meterian.io**.
+> ⚠️ **Security disclosures**
+> Please **do not** file security vulnerabilities here. Email **security@meterian.io** with details and a way to reproduce. We'll acknowledge within 2 business days.
 
----
+
 ## Where to get help
+
 - **Discord (community support):** [![Discord](https://img.shields.io/badge/Discord-join-blue?logo=discord&logoColor=white)](https://discord.gg/gHP9eaZdkp)
- - **Documentation:** We are working hard on it, coming soon :)
-- **FAQ:** See our [FAQ document](faq.md)
+- **FAQ:** See our [FAQ](faq.md)
+
 
 ## What data is transferred by the plugin?
-The system is powered by the [Meterian Kiwi](https://www.meterian.io/product/kiwi/) vulnerability database. The APIs are called passing an opaque identifier as an authorization header; the data transferred is the name, version and language of a library. Additionally another API is called from [Meterian Heidi](https://www.meterian.io/product/heidi/) backend services, which is used to track activity. Any identity information is anonymized, encrypted with strong cypher, and cannot be decyphered.
+
+The system is powered by the [Meterian Kiwi](https://www.meterian.io/product/kiwi/) vulnerability database. The APIs are called passing an opaque identifier as an authorization header; the data transferred is the name, version and language of a library. Additionally another API is called from [Meterian Heidi](https://www.meterian.io/product/heidi/) backend services, which is used to track activity. Any identity information is anonymized, encrypted with strong cipher, and cannot be deciphered.
 
 
 ## Contributing feedback
-While the extension is closed source and this repository contains no code, your feedback here directly shapes our backlog and priorities. The extension is completely free to use.
 
+While the extension is closed source and the [issue tracker repository](https://github.com/MeterianHQ/vscode-extension-tracker) contains no code, your feedback directly shapes our backlog and priorities. The extension is completely free to use.
