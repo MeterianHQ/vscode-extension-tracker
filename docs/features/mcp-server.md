@@ -105,5 +105,11 @@ Here are some prompts to get the most out of the Meterian MCP server with your A
 
 ---
 
+## Known issues
+
+Due to an [issue in Claude](https://github.com/anthropics/claude-code/issues/30147) that prematurely closes stdin, a reconnect to the MCP server may be  needed after starting Claude for the first time. Enter /mcp, select the mcp server with the arrows, and click reconnect.  
+
+---
+
 !!! note "Premium recommended"
     The MCP server works in Free mode, but Premium mode provides broader language coverage and more detailed advisory information.
