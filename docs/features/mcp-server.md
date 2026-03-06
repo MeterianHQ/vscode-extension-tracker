@@ -8,6 +8,23 @@ Once connected, you can ask your AI things like:
 > *"What's a safe version for the axios library?"*
 > *"Get me a list of all critical vulnerabilities in this project."*
 
+## Why does my AI need an MCP server?
+
+The AI assistants in IDEs are pre-trained on a set of data, which eventually becomes old. New vulnerabilities are emerging on a daily basis, and the AI model is not aware of the vulnerabilities that appeared after the pre-trained model's cutoff date. The MCP server, provided standalone or bundled with the Meterian extension, feeds the AI assistant in your IDE with the latest information on vulnerabilities, enabling it to detect vulnerabilities in your dependencies and suggest the best alternatives with the help of the latest security data.
+
+## See it in action
+
+<div style="display:flex;gap:16px;flex-wrap:wrap;">
+  <div style="flex:1;min-width:280px;">
+    <p><strong>English</strong></p>
+    <iframe width="100%" height="215" src="https://youtu.be/GxM8euTyXRk" title="Meterian Security AI/MCP - English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+  <div style="flex:1;min-width:280px;">
+    <p><strong>Italian</strong></p>
+    <iframe width="100%" height="215" src="https://youtu.be/6raCKVm03VU" title="Meterian Security AI/MCP - Italian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
+</div>
+
 ## How it works
 
 When the VS Code extension activates, it automatically registers the MCP server with any supported IDEs it finds on your machine (VS Code, Cursor, Windsurf). For AI CLI tools (Claude Code, Gemini CLI, Codex), use the VS Code commands below or the [standalone installer](#standalone-installation-without-vs-code).
