@@ -17,11 +17,11 @@ The AI assistants in IDEs are pre-trained on a set of data, which eventually bec
 <div style="display:flex;gap:16px;flex-wrap:wrap;">
   <div style="flex:1;min-width:280px;">
     <p><strong>English</strong></p>
-    <iframe width="100%" height="215" src="https://youtu.be/GxM8euTyXRk" title="Meterian Security AI/MCP - English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="215" src="https://www.youtube.com/watch?v=GxM8euTyXRk" title="Meterian Security AI/MCP - English" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
   <div style="flex:1;min-width:280px;">
     <p><strong>Italian</strong></p>
-    <iframe width="100%" height="215" src="https://youtu.be/6raCKVm03VU" title="Meterian Security AI/MCP - Italian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="215" src="https://www.youtube.com/watch?v=6raCKVm03VU" title="Meterian Security AI/MCP - Italian" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
   </div>
 </div>
 
