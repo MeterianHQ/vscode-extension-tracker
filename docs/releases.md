@@ -2,7 +2,7 @@
 
 ## 1.19.2
 
-A quick hotfix release as 1.19.1 sometimes does not boot on Windows machines. Will be followed to a proper release fixing the underlying issue still outstanding 
+A quick hotfix release as 1.19.1 sometimes does not boot on Windows machines. Will be followed to a proper release fixing the underlying issue still outstanding [(#18)](https://github.com/MeterianHQ/vscode-extension-tracker/issues/18)
 
 
 ## 1.19.1
