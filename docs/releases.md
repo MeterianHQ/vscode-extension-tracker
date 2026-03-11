@@ -1,5 +1,26 @@
 # Releases
 
+## 1.19.5
+
+A stability-focused release addressing several crashes and edge cases reported after 1.19.1.
+
+### Bug Fixes
+
+#### Extension could crash when safe version data was unavailable
+In some cases, looking up a safe version for a vulnerable package could fail silently and cause the report to crash. This is now handled gracefully.
+
+#### Quick-fix for Cargo.lock pointed to the wrong file
+When applying a fix for a Rust transitive dependency, the extension could target the wrong `Cargo.toml` in multi-project workspaces. This is now resolved correctly.
+
+#### Extension failed to start cleanly in some environments
+A missing internal folder could prevent the extension from initialising properly on first run or after a clean install. The extension now recovers from this automatically.
+
+#### Hangs when the Meterian service was slow to respond
+If the Meterian backend took too long to respond, the extension could stall indefinitely. Requests now time out and fail gracefully instead.
+
+#### Intermittent failures on network drives
+When a project was stored on a network filesystem, some operations could silently fail. These have been fixed.
+
 ## 1.19.2
 
 A quick hotfix release as 1.19.1 sometimes does not boot on Windows machines. Will be followed to a proper release fixing the underlying issue still outstanding [(#18)](https://github.com/MeterianHQ/vscode-extension-tracker/issues/18)
