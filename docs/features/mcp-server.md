@@ -46,6 +46,7 @@ The server exposes two tools:
 | **Claude Code** | Via VS Code command or standalone installer | [claude.ai/code](https://claude.ai/code) |
 | **Gemini CLI** | Via VS Code command or standalone installer | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) |
 | **Codex CLI** | Via VS Code command or standalone installer | [github.com/openai/codex](https://github.com/openai/codex) |
+| **mcp-cli** | Via standalone installer | [github.com/philschmid/mcp-cli](https://github.com/philschmid/mcp-cli) |
 
 ## VS Code commands
 
