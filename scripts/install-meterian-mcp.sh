@@ -271,7 +271,12 @@ do_install() {
   echo "  CLIs registered:  $REGISTERED"
   echo ""
   echo "  To run manually:  node $ENTRY"
-  echo "  To uninstall:     $0 --uninstall"
+  case "$(basename "$0")" in
+    bash|sh|dash|zsh)
+      echo "  To uninstall:     Re-run this script with --uninstall" ;;
+    *)
+      echo "  To uninstall:     $0 --uninstall" ;;
+  esac
 }
 
 # ── Main ─────────────────────────────────────────────────────────────────
