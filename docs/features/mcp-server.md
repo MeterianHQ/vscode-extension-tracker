@@ -38,14 +38,14 @@ The server exposes two tools:
 
 ## Supported AI tools
 
-| Tool | Integration method |
-|------|--------------------|
-| **VS Code** (Copilot) | Config file updated automatically |
-| **Cursor** | Config file updated automatically |
-| **Windsurf** | Config file updated automatically |
-| **Claude Code** | Via VS Code command or standalone installer |
-| **Gemini CLI** | Via VS Code command or standalone installer |
-| **Codex CLI** | Via VS Code command or standalone installer |
+| Tool | Integration method | Website |
+|------|--------------------|---------|
+| **VS Code** (Copilot) | Config file updated automatically | [code.visualstudio.com](https://code.visualstudio.com/) |
+| **Cursor** | Config file updated automatically | [cursor.com](https://www.cursor.com/) |
+| **Windsurf** | Config file updated automatically | [windsurf.com](https://windsurf.com/) |
+| **Claude Code** | Via VS Code command or standalone installer | [claude.ai/code](https://claude.ai/code) |
+| **Gemini CLI** | Via VS Code command or standalone installer | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) |
+| **Codex CLI** | Via VS Code command or standalone installer | [github.com/openai/codex](https://github.com/openai/codex) |
 
 ## VS Code commands
 
