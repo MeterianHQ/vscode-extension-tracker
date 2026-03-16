@@ -31,7 +31,7 @@ require_cmd() {
 }
 
 has_cmd() {
-  command -v "$1" >/dev/null 2>&1
+  command -v "$1" >/dev/null 2>&1 || [ -x "$HOME/.local/bin/$1" ]
 }
 
 cleanup_temp() {
@@ -64,6 +64,17 @@ do_uninstall() {
   if has_cmd codex; then
     info "Removing from Codex CLI..."
     codex mcp remove "$MCP_NAME" >/dev/null 2>&1 && ok "Removed from Codex CLI" || warn "Not registered in Codex CLI (or removal failed)"
+  fi
+
+  MCP_CLI_CONFIG="$HOME/.config/mcp/mcp_servers.json"
+  if [ -f "$MCP_CLI_CONFIG" ]; then
+    info "Removing from mcp-cli..."
+    node -e "
+      const fs = require('fs');
+      const cfg = JSON.parse(fs.readFileSync('$MCP_CLI_CONFIG', 'utf8'));
+      delete cfg.mcpServers['$MCP_NAME'];
+      fs.writeFileSync('$MCP_CLI_CONFIG', JSON.stringify(cfg, null, 2));
+    " && ok "Removed from mcp-cli" || warn "Failed to remove from mcp-cli config"
   fi
 
   # Remove installed files
@@ -147,9 +158,7 @@ do_install() {
 
   # Auth and API dependencies (required by entry.js via relative paths)
   mkdir -p "$INSTALL_DIR/src/meterian"
-  cp "$EXTENSION_DIR/src/meterian/Auth.js" "$INSTALL_DIR/src/meterian/"
-  cp "$EXTENSION_DIR/src/meterian/KiwiAPI.js" "$INSTALL_DIR/src/meterian/"
-  cp "$EXTENSION_DIR/src/meterian/AccountsAPI.js" "$INSTALL_DIR/src/meterian/"
+  cp -r "$EXTENSION_DIR/src/meterian/." "$INSTALL_DIR/src/meterian/"
 
   # Pre-bundled node_modules
   cp -r "$EXTENSION_DIR/node_modules" "$INSTALL_DIR/"
@@ -228,11 +237,29 @@ do_install() {
     fi
   fi
 
+  if has_cmd mcp-cli; then
+    info "Registering with mcp-cli..."
+    MCP_CLI_CONFIG_DIR="$HOME/.config/mcp"
+    MCP_CLI_CONFIG="$MCP_CLI_CONFIG_DIR/mcp_servers.json"
+    mkdir -p "$MCP_CLI_CONFIG_DIR"
+    node -e "
+      const fs = require('fs');
+      const cfg = fs.existsSync('$MCP_CLI_CONFIG')
+        ? JSON.parse(fs.readFileSync('$MCP_CLI_CONFIG', 'utf8'))
+        : { mcpServers: {} };
+      cfg.mcpServers = cfg.mcpServers || {};
+      cfg.mcpServers['$MCP_NAME'] = { command: 'node', args: ['$ENTRY'] };
+      fs.writeFileSync('$MCP_CLI_CONFIG', JSON.stringify(cfg, null, 2));
+    " && ok "Registered with mcp-cli" || warn "Failed to register with mcp-cli"
+    REGISTERED=$((REGISTERED + 1))
+  fi
+
   if [ "$REGISTERED" -eq 0 ]; then
-    warn "No AI CLIs found (claude, gemini, codex). You can register manually later:"
+    warn "No AI CLIs found (claude, gemini, codex, mcp-cli). You can register manually later:"
     echo "  claude mcp add $MCP_NAME -s user -- node $ENTRY"
     echo "  gemini mcp add $MCP_NAME node $ENTRY --scope user"
     echo "  codex  mcp add $MCP_NAME -- node $ENTRY"
+    echo "  # mcp-cli: add to ~/.config/mcp/mcp_servers.json manually"
   fi
 
   # 6. Summary
