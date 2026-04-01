@@ -12,7 +12,8 @@ By default the extension shows results every time it runs. You can change this i
 | Once per session | Show once per IDE session, then stay quiet |
 | Daily | Show at most once per day |
 | Weekly | Show at most once per week |
-| Never | Run silently — results only visible in the Problems panel and report |
+| Monthly | Show at most once per month |
+| Once | Show results once |
 
 !!! tip
     Even when set to "Never", the extension still scans and populates the Problems panel. You just won't see a notification pop-up.
