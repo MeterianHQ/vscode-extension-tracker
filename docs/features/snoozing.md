@@ -15,8 +15,11 @@ By default the extension shows results every time it runs. You can change this i
 | Monthly | Show at most once per month |
 | Once | Show results once |
 
-!!! tip
-    Even when set to "Never", the extension still scans and populates the Problems panel. You just won't see a notification pop-up.
+Once results have been viewed, they will be hiddend. They will be shown again based on the frequency chosen above. 
+The only exceptions to this rule are:
+
+- Triggering on deman analysis: if you trigger an on-demand analysis, after it completes all problems will be shown (old and new ones if any)
+- New problems are discovered: as security analyses continue running in the background, if new problems are discovered then all outstanding problems are shown
 
 ## Snoozing a single finding
 
