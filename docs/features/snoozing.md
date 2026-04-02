@@ -18,7 +18,7 @@ By default the extension shows results every time it runs. You can change this i
 Once results have been viewed, they will be hidden. They will be shown again based on the frequency chosen above. 
 The only exceptions to this rule are:
 
-- On-deman analysis request: if you trigger an on-demand analysis, after it completes all problems will be shown (old and new ones if any)
+- On-demand analysis request: if you trigger an on-demand analysis, after it completes all problems will be shown (old and new ones if any)
 - New problems are discovered: as security analyses continue running in the background, if new problems are discovered then all outstanding problems are shown
 
 ## Snoozing a single finding
