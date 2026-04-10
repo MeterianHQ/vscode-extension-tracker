@@ -54,23 +54,3 @@ This removes `~/.meterian/mcp-server/` and deregisters the server from all AI CL
 | `~/.claude/skills/meterian-security-audit/` | Security Audit Skill for Claude Code |
 | `~/.codex/skills/meterian-security-audit/` | Security Audit Skill for Codex CLI |
 
-## Configuration
-
-The MCP server can be configured via `~/.meterian/heidi/config/config.json`:
-
-```json
-{
-  "kiwiBaseUrl": "https://services3.www.meterian.io"
-}
-```
-
-| Option | Description | Default |
-|--------|-------------|---------|
-| `kiwiBaseUrl` | Custom Kiwi API base URL | `https://services3.www.meterian.io` |
-
-**Environment variable overrides:**
-
-| Variable | Description |
-|----------|-------------|
-| `KIWI_BASE_URL` | Override `kiwiBaseUrl` at runtime |
-| `MCP_VERBOSE` | Enable stderr logging (useful for debugging) |
