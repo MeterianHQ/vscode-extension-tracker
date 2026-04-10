@@ -26,6 +26,7 @@ theme:
     - navigation.top
     - search.suggest
     - search.highlight
+    - content.tabs.link
 
 nav:
   - Home: index.md
@@ -33,7 +34,14 @@ nav:
     - Overview: features/index.md
     - Autofix & Remediation: features/autofix.md
     - Notifications & Snoozing: features/snoozing.md
-    - MCP Server: features/mcp-server.md
+  - MCP Server:
+    - Overview: mcp/index.md
+    - Tools Reference: mcp/tools.md
+    - AI Tool Integrations: mcp/integrations.md
+    - Security Audit Skill: mcp/skill.md
+    - Standalone Installation: mcp/installation.md
+    - Manual Installation: mcp/manual-installation.md
+    - Prompts & Examples: mcp/prompts.md
   - Supported Languages: languages.md
   - Commands: commands.md
   - Configuration: configuration.md
@@ -48,3 +56,5 @@ markdown_extensions:
   - md_in_html
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
