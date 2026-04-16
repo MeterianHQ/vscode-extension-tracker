@@ -68,6 +68,15 @@ Why? Because being helpful is great, but *constantly yelling the same thing at y
 
 
 ---
+
+## 🤖 Can't I just ask my AI assistant if a dependency is safe?
+
+You can, but the answer may be out of date. AI models are trained on a snapshot of the world: if a vulnerability was disclosed after the cutoff, the assistant may still call the library safe with full confidence.
+
+The Meterian MCP server gives your AI assistant live access to vulnerability data, so it's reasoning from today's picture, not last year's. See [what the MCP server solves](mcp/scenarios.md) for a full list of scenarios where this makes a difference.
+
+---
+
 ## 🧾 How do I collect logs for an issue?
 
 When something goes bump, attaching the extension log helps us fix it fast.
