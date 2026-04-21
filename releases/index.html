@@ -1,0 +1,2753 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Detect and fix open-source vulnerabilities directly in your IDE">
+      
+      
+      
+        <link rel="canonical" href="https://meterianhq.github.io/vscode-extension-tracker/releases/">
+      
+      
+        <link rel="prev" href="../configuration/">
+      
+      
+        <link rel="next" href="../roadmap/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/logo.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Releases - Meterian Security - VS Code Extension</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#releases" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Meterian Security - VS Code Extension" class="md-header__button md-logo" aria-label="Meterian Security - VS Code Extension" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Meterian Security - VS Code Extension
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Releases
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/MeterianHQ/vscode-extension-tracker" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MeterianHQ/vscode-extension-tracker
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../features/" class="md-tabs__link">
+          
+  
+  
+  Features
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../mcp/" class="md-tabs__link">
+          
+  
+  
+  MCP Server
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../languages/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Supported Languages
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../commands/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Commands
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../configuration/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Configuration
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Releases
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../roadmap/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Roadmap
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../faq/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  FAQ
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Meterian Security - VS Code Extension" class="md-nav__button md-logo" aria-label="Meterian Security - VS Code Extension" data-md-component="logo">
+      
+  <img src="../assets/logo.svg" alt="logo">
+
+    </a>
+    Meterian Security - VS Code Extension
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/MeterianHQ/vscode-extension-tracker" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    MeterianHQ/vscode-extension-tracker
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Features
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Features
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/autofix/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Autofix & Remediation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../features/snoozing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Notifications & Snoozing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MCP Server
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MCP Server
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Overview
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/tools/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tools Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/integrations/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    AI Tool Integrations
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/skill/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Security Audit Skill
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Standalone Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/manual-installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Manual Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/prompts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Prompts & Examples
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mcp/scenarios/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    What the MCP server solves
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../languages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Supported Languages
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Releases
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meterian-security-audit-skill-command-was-not-recognised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /meterian-security-audit skill command was not recognised
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1203" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meterian-security-audit-skill-for-claude-code-and-codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /meterian-security-audit skill for Claude Code and Codex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-prompts-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP prompts support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-language-support-in-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional language support in the MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-vulnerability-in-bundled-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security vulnerability in bundled axios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-link-for-hidden-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary link for hidden vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash-when-opening-virtual-or-unsaved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crash when opening virtual or unsaved files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snooze-and-visibility-data-stored-in-vs-code-workspace-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snooze and visibility data stored in VS Code workspace state
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash-in-indentation-logic-for-certain-manifest-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crash in indentation logic for certain manifest formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1200" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.0
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-registration-via-mcp-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP server registration via mcp-cli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-on-package-lockjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix on package-lock.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitive-vulnerabilities-grouped-under-their-direct-parent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transitive vulnerabilities grouped under their direct parent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-timeouts-on-all-api-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP timeouts on all API calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle-crash-on-dependencies-with-unresolved-version-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle: crash on dependencies with unresolved version variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-negative-column-position-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle: negative column position crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradlegeneral-non-string-version-values-causing-crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle/general: non-string version values causing crashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-autofixer-crash-when-dependency-had-no-child-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java autofixer: crash when dependency had no child elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-version-lookup-returning-null-on-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe-version lookup returning null on failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1195" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.19.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extension-could-crash-when-safe-version-data-was-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension could crash when safe version data was unavailable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-for-cargolock-pointed-to-the-wrong-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix for Cargo.lock pointed to the wrong file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-failed-to-start-cleanly-in-some-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension failed to start cleanly in some environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hangs-when-the-meterian-service-was-slow-to-respond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hangs when the Meterian service was slow to respond
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermittent-failures-on-network-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermittent failures on network drives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1192" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1191" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.19.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproject-navigation-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subproject navigation in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-for-cargo-lockfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix for Cargo lockfiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lockfile-detection-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lockfile detection support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-manifest-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle manifest support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smarter-less-intrusive-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smarter, less intrusive notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-summary-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability summary in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cve-details-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVE details in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-incorrectly-modifying-unrelated-packages-in-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix incorrectly modifying unrelated packages in requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roadmap/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Roadmap
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    FAQ
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1205" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meterian-security-audit-skill-command-was-not-recognised" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /meterian-security-audit skill command was not recognised
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1204" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.4
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1203" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.3
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#meterian-security-audit-skill-for-claude-code-and-codex" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        /meterian-security-audit skill for Claude Code and Codex
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mcp-prompts-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP prompts support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-language-support-in-the-mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Additional language support in the MCP server
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#security-vulnerability-in-bundled-axios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Security vulnerability in bundled axios
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1202" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.2
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#summary-link-for-hidden-vulnerabilities" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary link for hidden vulnerabilities
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash-when-opening-virtual-or-unsaved-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crash when opening virtual or unsaved files
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1201" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#improvements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#snooze-and-visibility-data-stored-in-vs-code-workspace-state" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Snooze and visibility data stored in VS Code workspace state
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#crash-in-indentation-logic-for-certain-manifest-formats" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Crash in indentation logic for certain manifest formats
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1200" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.20.0
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.20.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server-registration-via-mcp-cli" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP server registration via mcp-cli
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-on-package-lockjson" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix on package-lock.json
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#transitive-vulnerabilities-grouped-under-their-direct-parent" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transitive vulnerabilities grouped under their direct parent
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#http-timeouts-on-all-api-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HTTP timeouts on all API calls
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#gradle-crash-on-dependencies-with-unresolved-version-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle: crash on dependencies with unresolved version variables
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-negative-column-position-crash" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle: negative column position crash
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradlegeneral-non-string-version-values-causing-crashes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle/general: non-string version values causing crashes
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java-autofixer-crash-when-dependency-had-no-child-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Java autofixer: crash when dependency had no child elements
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#safe-version-lookup-returning-null-on-failure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe-version lookup returning null on failure
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1195" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.5
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.19.5">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#extension-could-crash-when-safe-version-data-was-unavailable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension could crash when safe version data was unavailable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-for-cargolock-pointed-to-the-wrong-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix for Cargo.lock pointed to the wrong file
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extension-failed-to-start-cleanly-in-some-environments" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Extension failed to start cleanly in some environments
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hangs-when-the-meterian-service-was-slow-to-respond" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Hangs when the Meterian service was slow to respond
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#intermittent-failures-on-network-drives" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Intermittent failures on network drives
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1192" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.2
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1191" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1.19.1
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.19.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        New Features
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="New Features">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mcp-server" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MCP Server
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subproject-navigation-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subproject navigation in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-for-cargo-lockfiles" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix for Cargo lockfiles
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lockfile-detection-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Lockfile detection support
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle-manifest-support" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gradle manifest support
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#improvements_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Improvements
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#smarter-less-intrusive-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Smarter, less intrusive notifications
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#vulnerability-summary-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Vulnerability summary in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cve-details-in-the-report" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        CVE details in the report
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Bug Fixes
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Bug Fixes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#quick-fix-incorrectly-modifying-unrelated-packages-in-requirementstxt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick-fix incorrectly modifying unrelated packages in requirements.txt
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="releases">Releases</h1>
+<h2 id="1205">1.20.5</h2>
+<p>A patch release fixing the <code>/meterian-security-audit</code> slash command name used by Claude Code and Codex.</p>
+<h3 id="bug-fixes">Bug Fixes</h3>
+<h4 id="meterian-security-audit-skill-command-was-not-recognised"><code>/meterian-security-audit</code> skill command was not recognised</h4>
+<p>The skill file installed for Claude Code and Codex referenced an incorrect command name, preventing the <code>/meterian-security-audit</code> slash command from activating. This is now corrected.</p>
+<hr />
+<h2 id="1204">1.20.4</h2>
+<p>Re-release of 1.20.3 to correct a packaging issue.</p>
+<hr />
+<h2 id="1203">1.20.3</h2>
+<p>Adds MCP prompt support, the <code>meterian-security-audit</code> skill for Claude Code and Codex, additional language coverage in the MCP server, and a security fix for the bundled axios library.</p>
+<h3 id="new-features">New Features</h3>
+<h4 id="meterian-security-audit-skill-for-claude-code-and-codex"><code>/meterian-security-audit</code> skill for Claude Code and Codex</h4>
+<p>The extension now installs a <code>meterian-security-audit</code> skill file on activation. Claude Code and Codex users can invoke <code>/meterian-security-audit</code> directly to run a guided vulnerability audit on their project dependencies.</p>
+<h4 id="mcp-prompts-support">MCP prompts support</h4>
+<p>The Meterian MCP server now exposes <code>prompts/list</code> and <code>prompts/get</code> — the standard MCP prompts interface. AI assistants that support MCP prompts can discover and invoke the security audit workflow without any manual configuration.</p>
+<h4 id="additional-language-support-in-the-mcp-server">Additional language support in the MCP server</h4>
+<p>The MCP tools now recognise C++, Dart, Clojure, and Swift library queries, in addition to the existing language set.</p>
+<h3 id="bug-fixes_1">Bug Fixes</h3>
+<h4 id="security-vulnerability-in-bundled-axios">Security vulnerability in bundled axios</h4>
+<p>Upgraded axios from an affected version to 1.15.0 to address a known security advisory.</p>
+<hr />
+<h2 id="1202">1.20.2</h2>
+<p>Improves how suppressed vulnerabilities are surfaced in the report and fixes a crash when opening virtual files.</p>
+<h3 id="improvements">Improvements</h3>
+<h4 id="summary-link-for-hidden-vulnerabilities">Summary link for hidden vulnerabilities</h4>
+<p>When vulnerabilities are hidden (snoozed or filtered by advice visibility), the report now shows a summary link so you can quickly navigate to the full list without losing context.</p>
+<h3 id="bug-fixes_2">Bug Fixes</h3>
+<h4 id="crash-when-opening-virtual-or-unsaved-files">Crash when opening virtual or unsaved files</h4>
+<p>The extension could throw an unhandled error when VS Code requested code actions for a virtual URI (e.g. an unsaved buffer). This is now guarded correctly.</p>
+<hr />
+<h2 id="1201">1.20.1</h2>
+<p>Migrates snooze and advice-visibility state from the filesystem to VS Code's built-in workspace state storage, improving reliability across different environments.</p>
+<h3 id="improvements_1">Improvements</h3>
+<h4 id="snooze-and-visibility-data-stored-in-vs-code-workspace-state">Snooze and visibility data stored in VS Code workspace state</h4>
+<p>Snoozed issues and hidden-advice preferences are now persisted via the VS Code <code>workspaceState</code> API instead of files written to <code>~/.meterian/heidi/</code>. Existing data is migrated automatically on first launch.</p>
+<h3 id="bug-fixes_3">Bug Fixes</h3>
+<h4 id="crash-in-indentation-logic-for-certain-manifest-formats">Crash in indentation logic for certain manifest formats</h4>
+<p>A null-dereference in the indentation helper could cause the extension to crash when processing some manifest files. This is now guarded.</p>
+<hr />
+<h2 id="1200">1.20.0</h2>
+<p>A significant feature release adding <code>mcp-cli</code> registration, quick-fix support for <code>package-lock.json</code>, clearer transitive vulnerability grouping, HTTP timeouts across all API clients, and a range of stability fixes — especially for Gradle projects.</p>
+<h3 id="new-features_1">New Features</h3>
+<h4 id="mcp-server-registration-via-mcp-cli">MCP server registration via <code>mcp-cli</code></h4>
+<p>The extension can now register and unregister the Meterian MCP server through the <code>mcp-cli</code> config file, in addition to the existing per-tool config file integrations. Use the <em>Register Meterian MCP Server</em> command from the Command Palette; a QuickPick lets you choose the target tool.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/141">(#141)</a></p>
+<h4 id="quick-fix-on-package-lockjson">Quick-fix on <code>package-lock.json</code></h4>
+<p>Transitive Node.js vulnerabilities flagged in <code>package-lock.json</code> can now be fixed directly from the editor. The fix runs <code>npm install --package-lock-only</code> under the hood, updating only the lockfile without downloading <code>node_modules</code>.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/142">(#142)</a></p>
+<h4 id="transitive-vulnerabilities-grouped-under-their-direct-parent">Transitive vulnerabilities grouped under their direct parent</h4>
+<p>In the diagnostics panel, transitive dependency vulnerabilities are now listed under their direct parent dependency, making it easier to understand the dependency chain and decide on a fix.</p>
+<h4 id="http-timeouts-on-all-api-calls">HTTP timeouts on all API calls</h4>
+<p>All requests to Meterian services (Kiwi, analytics, crash reporting, builds, accounts) now have explicit timeouts. The extension will no longer stall indefinitely if the backend is slow or unreachable.</p>
+<h3 id="bug-fixes_4">Bug Fixes</h3>
+<h4 id="gradle-crash-on-dependencies-with-unresolved-version-variables">Gradle: crash on dependencies with unresolved version variables</h4>
+<p>Dependencies whose version was defined as a Gradle property (e.g. <code>$libs.versions.foo</code>) were not filtered out before processing, causing a crash. These entries are now skipped.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/163">(#163)</a></p>
+<h4 id="gradle-negative-column-position-crash">Gradle: negative column position crash</h4>
+<p>A column calculation could produce a negative value for some Gradle dependency declarations, crashing the diagnostics renderer. The value is now clamped to zero.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/162">(#162)</a></p>
+<h4 id="gradlegeneral-non-string-version-values-causing-crashes">Gradle/general: non-string version values causing crashes</h4>
+<p>Version fields that were not plain strings (e.g. numbers or objects) could crash the version sanitiser and comparers. All paths now coerce the value to a string before processing.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/161">(#161)</a> <a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/174">(#174)</a></p>
+<h4 id="java-autofixer-crash-when-dependency-had-no-child-elements">Java autofixer: crash when dependency had no child elements</h4>
+<p>The Java autofixer could throw when processing a <code>&lt;dependency&gt;</code> block that lacked the expected child nodes. This is now handled gracefully.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/157">(#157)</a></p>
+<h4 id="safe-version-lookup-returning-null-on-failure">Safe-version lookup returning null on failure</h4>
+<p>When the Kiwi API could not find a safe version, it returned <code>null</code> instead of an empty result, causing downstream null-reference errors in the report and diagnostic messages. It now returns an empty object.</p>
+<hr />
+<h2 id="1195">1.19.5</h2>
+<p>A stability-focused release addressing several crashes and edge cases reported after 1.19.1.</p>
+<h3 id="bug-fixes_5">Bug Fixes</h3>
+<h4 id="extension-could-crash-when-safe-version-data-was-unavailable">Extension could crash when safe version data was unavailable</h4>
+<p>In some cases, looking up a safe version for a vulnerable package could fail silently and cause the report to crash. This is now handled gracefully.</p>
+<h4 id="quick-fix-for-cargolock-pointed-to-the-wrong-file">Quick-fix for Cargo.lock pointed to the wrong file</h4>
+<p>When applying a fix for a Rust transitive dependency, the extension could target the wrong <code>Cargo.toml</code> in multi-project workspaces. This is now resolved correctly.</p>
+<h4 id="extension-failed-to-start-cleanly-in-some-environments">Extension failed to start cleanly in some environments</h4>
+<p>A missing internal folder could prevent the extension from initialising properly on first run or after a clean install. The extension now recovers from this automatically.</p>
+<h4 id="hangs-when-the-meterian-service-was-slow-to-respond">Hangs when the Meterian service was slow to respond</h4>
+<p>If the Meterian backend took too long to respond, the extension could stall indefinitely. Requests now time out and fail gracefully instead.</p>
+<h4 id="intermittent-failures-on-network-drives">Intermittent failures on network drives</h4>
+<p>When a project was stored on a network filesystem, some operations could silently fail. These have been fixed.</p>
+<h2 id="1192">1.19.2</h2>
+<p>A quick hotfix release as 1.19.1 sometimes does not boot on Windows machines. Will be followed to a proper release fixing the underlying issue still outstanding <a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/18">(#18)</a></p>
+<h2 id="1191">1.19.1</h2>
+<h3 id="new-features_2">New Features</h3>
+<h4 id="mcp-server">MCP Server</h4>
+<p>AI assistants (Claude Code, Cursor, Windsurf, VS Code + Copilot, Gemini CLI, Codex) can now query the Meterian vulnerability database directly.
+Ask your AI assistant things like <em>"Is any of my libraries currently vulnerable?"</em> or <em>"Get me a safe version for axios"</em> — and it will use the Meterian MCP server to answer.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/6">(#6)</a></p>
+<h4 id="subproject-navigation-in-the-report">Subproject navigation in the report</h4>
+<p>When working on a project with multiple subprojects, vulnerabilities are now grouped by subproject path in the report. Click a subproject to drill down into its findings.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/14">(#14)</a></p>
+<h4 id="quick-fix-for-cargo-lockfiles">Quick-fix for Cargo lockfiles</h4>
+<p>Transitive dependencies in <code>Cargo.lock</code> can now be fixed directly from the IDE, using <code>cargo update -p &lt;package&gt; --precise &lt;version&gt;</code> under the hood.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/9">(#9)</a></p>
+<h4 id="lockfile-detection-support">Lockfile detection support</h4>
+<p>Vulnerabilities in transitive dependencies are now detected across all major lockfiles: <code>package-lock.json</code>, <code>composer.lock</code>, <code>Gemfile.lock</code>, <code>Pipfile.lock</code>, <code>poetry.lock</code>, <code>uv.lock</code>, <code>Cargo.lock</code>, <code>go.sum</code>.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/2">(#2)</a></p>
+<h4 id="gradle-manifest-support">Gradle manifest support</h4>
+<p><code>build.gradle</code> and <code>build.gradle.kts</code> files are now supported for vulnerability detection.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/1">(#1)</a></p>
+<h3 id="improvements_2">Improvements</h3>
+<h4 id="smarter-less-intrusive-notifications">Smarter, less intrusive notifications</h4>
+<p>The extension now alerts you only when new vulnerabilities are discovered, rather than on every IDE session start. Use the <code>Enabled</code> workspace setting to suppress notifications entirely if needed.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/13">(#13)</a></p>
+<h4 id="vulnerability-summary-in-the-report">Vulnerability summary in the report</h4>
+<p>The report now opens with a summary table showing vulnerability counts by severity (Critical, High, Medium, Low) and the total number of affected packages.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/8">(#8)</a></p>
+<h4 id="cve-details-in-the-report">CVE details in the report</h4>
+<p>Each finding in the report now includes the CVE identifier, a brief description, and a link to the full CVE entry — expandable inline, no context switching needed.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/3">(#3)</a></p>
+<h3 id="bug-fixes_6">Bug Fixes</h3>
+<h4 id="quick-fix-incorrectly-modifying-unrelated-packages-in-requirementstxt">Quick-fix incorrectly modifying unrelated packages in requirements.txt</h4>
+<p>When applying a quick-fix in a <code>requirements.txt</code> file, the fix was incorrectly updating packages whose name contained the target package name as a substring (e.g. fixing <code>onx</code> would also modify <code>onxruntime</code>). This has been fixed.
+<a href="https://github.com/MeterianHQ/vscode-extension-tracker/issues/7">(#7)</a></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["navigation.tabs", "navigation.top", "search.suggest", "search.highlight", "content.tabs.link"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
