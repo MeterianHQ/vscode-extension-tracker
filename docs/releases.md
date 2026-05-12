@@ -1,5 +1,102 @@
 # Releases
 
+## 1.20.10
+
+A patch release with three resilience fixes for non-standard environments and edge cases.
+
+### Bug Fixes
+
+#### MCP auto-start crash on older VS Code forks
+Editors that predate VS Code 1.99 (e.g. Trae CN) do not expose `workbench.mcp.startServer`, and the auto-start introduced in 1.20.7 was raising an unhandled "command not found" error. Auto-start now checks command availability first and skips silently when unsupported.
+
+#### False-positive crash reports when AI CLIs are not installed
+When the `claude`, `gemini`, or `codex` CLI was not on the `PATH`, the MCP-registration check rejected with a raw stderr string and the extension reported it as a crash. A missing CLI is now treated as the expected condition it is.
+
+#### Autofix refresh crashed when no editor was focused
+Triggering an autofix while the focus was on the Source Control view or a webview could throw a `TypeError` from the WSL-on-Windows refresh helper. The helper now no-ops when there is no active editor.
+
+---
+
+## 1.20.9
+
+A consolidation release adding a new advisory filter, hardening the configuration and analysis code paths against malformed data, and forward-porting a number of stability fixes from the 1.19.x line.
+
+### New Features
+
+#### Filter out unmaintained-library advisories
+A new `meterian.filters.ignoreUnmaintained` setting suppresses advisories whose source is the unmaintained-library catalogue, alongside the existing severity, CVSS, EPSS, and CVE-only filters. The report shows a dedicated summary line for the bucket so you can see how many advisories were hidden.
+
+### Bug Fixes
+
+#### Analysis errors no longer reported as crashes
+Recoverable `MeterianError` exceptions raised during analysis were being sent to the crash-reporting backend, drowning real crashes in noise. Only errors raised from the UI-feedback path are now reported.
+
+#### Resilience against unreadable or corrupt configuration files
+A damaged `~/.meterian/heidi/config.json` (truncated, non-JSON, or unreadable) could prevent the extension from starting. The config layer now recovers from this and falls back to defaults, and `HeidiConfigMeterian.update` guards against null/undefined input.
+
+#### Crash on null version values
+A null guard was missing in `sanitizeVersion`, which could crash when a manifest reported a `null` version. This is now handled.
+
+#### Cancelled filesystem reads bubbling up as errors
+A `Canceled` `FileSystemError` thrown during a directory read (e.g. when a folder was closed mid-scan) is now swallowed cleanly.
+
+#### npm transitive parent lookup using `node_modules`
+When locating the parent of a vulnerable transitive package, `npm ls` was running without `--package-lock-only`, which could fail or be slow on projects without `node_modules` installed. The lookup now runs lockfile-only.
+
+---
+
+## 1.20.8
+
+A single-fix patch release.
+
+### Bug Fixes
+
+#### Java autofixer crash on circular dependency URI references
+Java dependency objects can carry a `versionLocation.uri` that points back into the workspace-file wrapper, creating a reference cycle. The autofixer's debug log was eagerly serialising this with `JSON.stringify` and throwing, aborting the fix. Serialisation is now gated on the debug log level and uses a cycle-safe replacer.
+
+---
+
+## 1.20.7
+
+Adds a project-level exclusions file, auto-starts the bundled MCP server inside VS Code, and improves crash-report attribution and a security upgrade for the bundled axios library.
+
+### New Features
+
+#### `.meterian` exclusions file
+You can now check a `.meterian` file into your repository to declare security, stability, and licensing exclusions (e.g. advices marked as *unapplicable* with a justification). Exclusions travel with the project and apply consistently across machines and CI.
+
+#### VS Code MCP server auto-starts on activation
+The Meterian MCP server is now registered with VS Code's Language Model API and started a couple of seconds after the extension activates, so it shows up as running immediately instead of waiting for the first chat invocation.
+
+### Improvements
+
+#### Crash reports now identify the host editor
+Crash reports include an `ide` field derived from `vscode.env.appName` (normalised to a lowercase, underscore-joined value), making it easier to distinguish issues that only occur in Cursor, Windsurf, or other VS Code forks.
+
+#### Axios upgraded to 1.16.0
+The bundled `axios` HTTP client was upgraded to 1.16.0 to pick up upstream security fixes.
+
+### Bug Fixes
+
+#### Java parser used the wrong URI for some lookups
+The Java manifest parser was occasionally resolving against the wrong file URI when handling both primary and fallback lookups. It now consistently uses the requested file's URI.
+
+#### Component collection in crash reports
+An issue that could leave the component list in a crash report incomplete has been fixed.
+
+---
+
+## 1.20.6
+
+A small follow-up release.
+
+### Improvements
+
+#### Post-review prompt after AI skill activation
+After installing the `meterian-security-audit` skill for Claude Code or Codex, the extension now offers a post-review step so you can immediately run the audit on the active workspace without going back to the command palette.
+
+---
+
 ## 1.20.5
 
 A patch release fixing the `/meterian-security-audit` slash command name used by Claude Code and Codex.
