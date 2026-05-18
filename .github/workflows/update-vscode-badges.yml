@@ -62,6 +62,7 @@ jobs:
           printf '{"schemaVersion":1,"label":"installs","message":"%s","color":"blue"}\n' "$INST_MSG" > badges/vscode-installs.json
           printf '{"schemaVersion":1,"label":"version","message":"%s","color":"informational"}\n' "$VER" > badges/vscode-version.json
           printf '{"schemaVersion":1,"label":"rating","message":"%s","color":"%s"}\n' "$STAR_MSG" "$COLOR" > badges/vscode-rating.json
+          printf '{"installs":%s,"averageRating":%s,"ratingCount":%s,"version":"%s"}\n' "$INST" "$AVG" "$CNT" "$VER" > badges/vscode-stats.json
 
           jq empty badges/vscode-*.json
 
