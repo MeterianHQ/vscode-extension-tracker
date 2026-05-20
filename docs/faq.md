@@ -69,6 +69,14 @@ Why? Because being helpful is great, but *constantly yelling the same thing at y
 
 ---
 
+## 🐧 The summary report won't open — there's a "service worker" error!
+
+If you're on Linux and the summary panel refuses to budge with a cryptic error about a service worker... don't panic. The extension is perfectly fine. The real culprit? VS Code installed via **Snap**. The Snap sandbox quietly locks down filesystem access in a way that breaks VS Code's internal webview — the thing that powers the summary panel.
+
+The fix: swap the Snap package for the official `.deb` from Microsoft's website. Once you're on the `.deb` version, the panel will load as expected. Nothing to see here — except your vulnerability report 😄
+
+---
+
 ## 🤖 Can't I just ask my AI assistant if a dependency is safe?
 
 You can, but the answer may be out of date. AI models are trained on a snapshot of the world: if a vulnerability was disclosed after the cutoff, the assistant may still call the library safe with full confidence.
