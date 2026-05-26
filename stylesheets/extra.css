@@ -1,0 +1,61 @@
+/* ── Homepage hero ── */
+.hero {
+  background: #f4f5fb;
+  border: 1px solid #dde0f0;
+  border-radius: 4px;
+  padding: 1.6rem 2rem;
+  margin-bottom: 2rem;
+}
+
+.hero .eyebrow {
+  display: block;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.09em;
+  color: var(--md-primary-fg-color);
+  opacity: 0.65;
+  margin-bottom: 0.6rem;
+}
+
+.hero h1 {
+  font-size: 1.6rem !important;
+  font-weight: 300 !important;
+  margin: 0 0 0.75rem !important;
+  padding: 0 !important;
+  border: none !important;
+  color: var(--md-default-fg-color);
+}
+
+.hero p {
+  color: var(--md-default-fg-color--light);
+  margin: 0 0 1rem;
+  max-width: 600px;
+}
+
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.hero-badges code {
+  background: white;
+  border: 1px solid #c8cef5;
+  border-radius: 3px;
+  padding: 0.15rem 0.55rem;
+  font-size: 0.78rem;
+  color: var(--md-primary-fg-color);
+  white-space: nowrap;
+}
+
+/* dark mode adjustments */
+[data-md-color-scheme="slate"] .hero {
+  background: hsla(var(--md-hue),15%,16%,1);
+  border-color: hsla(var(--md-hue),15%,25%,1);
+}
+[data-md-color-scheme="slate"] .hero-badges code {
+  background: hsla(var(--md-hue),15%,20%,1);
+  border-color: hsla(var(--md-hue),15%,30%,1);
+}
