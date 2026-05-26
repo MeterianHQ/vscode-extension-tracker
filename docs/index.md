@@ -13,7 +13,7 @@ suggests safe upgrades — directly inside the editor, without leaving your
 workflow. Available on the VS Code Marketplace and the OpenVSX registry.
 
 <div class="hero-badges" markdown>
-`VS Code Marketplace` &nbsp;&nbsp; `OpenVSX` &nbsp;&nbsp; `Free · No account required`
+`VS Code` &nbsp;&nbsp; `Windsurf` &nbsp;&nbsp; `Cursor` &nbsp;&nbsp; `more...`
 </div>
 </div>
 
