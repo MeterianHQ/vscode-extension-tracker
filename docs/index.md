@@ -3,7 +3,19 @@ hide:
   - navigation
 ---
 
-# Meterian Security — VS Code Extension
+<div class="hero" markdown>
+<span class="eyebrow">Free &nbsp;·&nbsp; No account required</span>
+
+# Inline vulnerability scanning for VS Code
+
+Heidi detects open-source vulnerabilities in your project dependencies and
+suggests safe upgrades — directly inside the editor, without leaving your
+workflow. Available on the VS Code Marketplace and the OpenVSX registry.
+
+<div class="hero-badges" markdown>
+`VS Code Marketplace` &nbsp;&nbsp; `OpenVSX` &nbsp;&nbsp; `Free · No account required`
+</div>
+</div>
 
 <table>
   <tr>
