@@ -1,3 +1,8 @@
+---
+hide:
+  - navigation
+---
+
 # Meterian Security — VS Code Extension
 
 <table>
