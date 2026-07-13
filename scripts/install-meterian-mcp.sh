@@ -77,6 +77,17 @@ do_uninstall() {
     " && ok "Removed from mcp-cli" || warn "Failed to remove from mcp-cli config"
   fi
 
+  # Remove skill files
+  if [ -d "$HOME/.claude/skills/meterian-security-audit" ]; then
+    rm -rf "$HOME/.claude/skills/meterian-security-audit"
+    ok "Removed skill from Claude Code"
+  fi
+
+  if [ -d "$HOME/.codex/skills/meterian-security-audit" ]; then
+    rm -rf "$HOME/.codex/skills/meterian-security-audit"
+    ok "Removed skill from Codex CLI"
+  fi
+
   # Remove installed files
   rm -rf "$INSTALL_DIR"
   ok "Removed $INSTALL_DIR"
@@ -159,6 +170,10 @@ do_install() {
   # Auth and API dependencies (required by entry.js via relative paths)
   mkdir -p "$INSTALL_DIR/src/meterian"
   cp -r "$EXTENSION_DIR/src/meterian/." "$INSTALL_DIR/src/meterian/"
+
+  # Config reader (required by kiwiBootstrap.js via ../../heidi/HeidiConfigMeterian)
+  mkdir -p "$INSTALL_DIR/src/heidi"
+  cp "$EXTENSION_DIR/src/heidi/HeidiConfigMeterian.js" "$INSTALL_DIR/src/heidi/"
 
   # Pre-bundled node_modules
   cp -r "$EXTENSION_DIR/node_modules" "$INSTALL_DIR/"
@@ -262,13 +277,40 @@ do_install() {
     echo "  # mcp-cli: add to ~/.config/mcp/mcp_servers.json manually"
   fi
 
-  # 6. Summary
+  # 6. Install skill files
+  info "Installing skill files..."
+  SKILL_SRC="$INSTALL_DIR/src/mcp/server/skills/meterian-security-audit.md"
+
+  if [ -f "$SKILL_SRC" ]; then
+    if has_cmd claude; then
+      CLAUDE_SKILL_DIR="$HOME/.claude/skills/meterian-security-audit"
+      mkdir -p "$CLAUDE_SKILL_DIR"
+      cp "$SKILL_SRC" "$CLAUDE_SKILL_DIR/SKILL.md"
+      ok "Skill installed for Claude Code"
+    fi
+
+    if has_cmd codex; then
+      CODEX_SKILL_DIR="$HOME/.codex/skills/meterian-security-audit"
+      mkdir -p "$CODEX_SKILL_DIR"
+      cp "$SKILL_SRC" "$CODEX_SKILL_DIR/SKILL.md"
+      ok "Skill installed for Codex CLI"
+    fi
+    # Gemini: skill delivered via MCP prompts, no file needed
+    if ! has_cmd claude && ! has_cmd codex; then
+      info "Skill file not installed (claude and codex not found; Gemini gets it via MCP prompts)"
+    fi
+  else
+    warn "Skill source file not found: $SKILL_SRC"
+  fi
+
+  # 7. Summary
   echo ""
   ok "Meterian MCP server v${VERSION} installed successfully!"
   echo ""
   echo "  Install location: $INSTALL_DIR"
   echo "  Entry point:      $ENTRY"
   echo "  CLIs registered:  $REGISTERED"
+  echo "  Skill:            /meterian-security-audit (Claude Code) · natural language (Codex) · MCP prompt (Gemini)"
   echo ""
   echo "  To run manually:  node $ENTRY"
   case "$(basename "$0")" in
