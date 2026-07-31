@@ -27,10 +27,17 @@ if (window !== window.top) {
   if (window === window.top) return;
 
   var WRAPPER_ORIGINS = ['https://www.meterian.io', 'https://meterian.io'];
+  var MAX_ATTEMPTS = 5;
+
+  var answered  = false;
+  var attempts  = 0;
 
   window.addEventListener('message', function (event) {
     if (WRAPPER_ORIGINS.indexOf(event.origin) === -1) return;
     if (!event.data || event.data.type !== 'meterian-consent') return;
+
+    // a refusal is an answer too -- stop asking either way
+    answered = true;
     if (!event.data.consent) return;
 
     // the same flag trackers.js sets from its own cookies; it will not
@@ -38,11 +45,29 @@ if (window !== window.top) {
     window.meterian_cookie_allowed = true;
 
     // trackers.js self-fires on a 500ms timer; if it already ran and bailed for
-    // lack of consent, run it again now. It guards against double-init itself.
+    // lack of consent, run it again now. It guards against double-init itself,
+    // which matters because the wrapper also pushes on our load event and we
+    // may well be told twice.
     if (typeof setTrackers === 'function') setTrackers();
   });
 
-  WRAPPER_ORIGINS.forEach(function (origin) {
-    window.top.postMessage({ type: 'meterian-consent-request' }, origin);
-  });
+  /*
+   * We load in parallel with the wrapper, so our first request can arrive
+   * before its listener exists -- postMessage neither queues nor errors, the
+   * request just disappears. Ask again a few times, backing off, until we get
+   * an answer. The wrapper also pushes unprompted once we finish loading, so
+   * in practice one of the two lands well before anyone would notice.
+   */
+  function requestConsent() {
+    if (answered || attempts >= MAX_ATTEMPTS) return;
+    attempts++;
+
+    WRAPPER_ORIGINS.forEach(function (origin) {
+      window.top.postMessage({ type: 'meterian-consent-request' }, origin);
+    });
+
+    setTimeout(requestConsent, 200 * attempts);
+  }
+
+  requestConsent();
 })();
