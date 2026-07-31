@@ -65,3 +65,4 @@ extra_css:
 
 extra_javascript:
   - javascripts/extra.js
+  - https://www.meterian.io/common_website/js/trackers.js
