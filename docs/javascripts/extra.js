@@ -16,7 +16,8 @@ if (window !== window.top) {
  * ships no consent panel of its own: visitors accepted (or declined) on the
  * main site before reaching the wrapper, and prompting again inside an embedded
  * frame would be a poor experience. So we ask the wrapper for the decision it
- * already holds.
+ * already holds, and record it in the same window.meterian_cookie_allowed flag
+ * trackers.js would have set from the cookies itself.
  *
  * Every internal link is a full page load, so this handshake runs afresh on
  * each docs page. Standalone visits (no wrapper) never get consent and never
@@ -32,7 +33,9 @@ if (window !== window.top) {
     if (!event.data || event.data.type !== 'meterian-consent') return;
     if (!event.data.consent) return;
 
-    window.meterian_consent_from_parent = true;
+    // the same flag trackers.js sets from its own cookies; it will not
+    // downgrade a consent already granted
+    window.meterian_cookie_allowed = true;
 
     // trackers.js self-fires on a 500ms timer; if it already ran and bailed for
     // lack of consent, run it again now. It guards against double-init itself.
