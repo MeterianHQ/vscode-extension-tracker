@@ -64,10 +64,9 @@ extra_css:
   - stylesheets/extra.css
 
 extra_javascript:
-  # trackers.js needs jQuery ($), js-cookie (Cookies) and window.webConfig
+  # trackers.js needs jQuery ($) and js-cookie (Cookies); it and the rest of the
+  # Meterian chain are injected by extra.js from whichever environment embeds
+  # this page, so that a qa wrapper exercises qa's scripts and not production's
   - https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js
   - https://cdnjs.cloudflare.com/ajax/libs/js-cookie/3.0.1/js.cookie.min.js
-  - https://www.meterian.io/common_website/js/web_configuration.js
-  - https://www.meterian.io/common_website/js/set_web_configuration.js
   - javascripts/extra.js
-  - https://www.meterian.io/common_website/js/trackers.js

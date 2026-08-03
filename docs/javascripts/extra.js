@@ -9,19 +9,25 @@ if (window !== window.top) {
 }
 
 /*
- * Inherit cookie consent from the meterian.io wrapper page.
+ * Inherit cookie consent, and the Meterian scripts themselves, from the wrapper
+ * page embedding us.
  *
  * This site is served from meterianhq.github.io, so it cannot read the consent
- * cookies set on meterian.io -- different registrable domains. It deliberately
- * ships no consent panel of its own: visitors accepted (or declined) on the
- * main site before reaching the wrapper, and prompting again inside an embedded
- * frame would be a poor experience. So we ask the wrapper for the decision it
- * already holds, and record it in the same window.meterian_cookie_allowed flag
- * trackers.js would have set from the cookies itself.
+ * cookies set on meterian.io or meterian.com -- different registrable domains.
+ * It deliberately ships no consent panel of its own: visitors accepted (or
+ * declined) on the main site before reaching the wrapper, and prompting again
+ * inside an embedded frame would be a poor experience. So we ask the wrapper for
+ * the decision it already holds, and record it in the same
+ * window.meterian_cookie_allowed flag trackers.js sets from the cookies itself.
  *
- * Every internal link is a full page load, so this handshake runs afresh on
- * each docs page. Standalone visits (no wrapper) never get consent and never
- * load trackers, which is the correct default.
+ * The same answer tells us which environment we are in, and we load that
+ * environment's scripts. One deployment of these docs is embedded by every
+ * environment, so a fixed host would mean qa's wrapper running production's
+ * trackers.js -- untestable, and wrong the moment the two versions differ.
+ *
+ * Every internal link is a full page load, so this runs afresh on each docs
+ * page. Standalone visits (no wrapper) load nothing and track nothing, which is
+ * the correct default.
  */
 (function () {
   if (window === window.top) return;
@@ -39,6 +45,37 @@ if (window !== window.top) {
     } catch (e) {
       return false;
     }
+  }
+
+  /*
+   * The Meterian scripts are loaded from whichever environment is embedding us,
+   * never from a fixed host. A qa wrapper gets qa's copy, www gets www's, and an
+   * environment nobody has thought of yet works without touching this file.
+   *
+   * The base comes from the message's origin, which the browser sets and
+   * isMeterianOrigin has already vetted -- not from anything the message itself
+   * claims, which would let a payload point us at a host of its choosing.
+   *
+   * Order matters: trackers.js reads window.webConfig. Dynamically created
+   * scripts default to async, so set async=false to keep them in sequence.
+   */
+  var METERIAN_SCRIPTS = [
+    '/common_website/js/web_configuration.js',
+    '/common_website/js/set_web_configuration.js',
+    '/common_website/js/trackers.js'
+  ];
+  var scriptsRequested = false;
+
+  function loadMeterianScripts(origin) {
+    if (scriptsRequested) return;
+    scriptsRequested = true;
+
+    METERIAN_SCRIPTS.forEach(function (path) {
+      var script = document.createElement('script');
+      script.src = origin + path;
+      script.async = false;
+      document.head.appendChild(script);
+    });
   }
 
   // for an iframe the referrer is the embedding page, which is how we reach an
@@ -70,22 +107,21 @@ if (window !== window.top) {
     // a refusal is an answer too -- stop asking either way
     answered = true;
 
-    // our own hostname is the docs host, identical on every environment, so
-    // trackers.js would file all of it under one property. The wrapper tells us
-    // which environment we are in; record it before the trackers read it.
-    if (event.data.hostname) window.meterian_host_override = event.data.hostname;
-
+    // no consent means nothing to load: leave the page without the scripts
+    // rather than fetching trackers that would only decline to run
     if (!event.data.consent) return;
 
-    // the same flag trackers.js sets from its own cookies; it will not
-    // downgrade a consent already granted
+    // our own hostname is the docs host, identical on every environment, so
+    // trackers.js would file all of it under one property. Take the environment
+    // from the vetted origin and set both flags before the scripts arrive.
+    window.meterian_host_override = new URL(event.origin).hostname;
     window.meterian_cookie_allowed = true;
 
-    // trackers.js self-fires on a 500ms timer; if it already ran and bailed for
-    // lack of consent, run it again now. It guards against double-init itself,
-    // which matters because the wrapper also pushes on our load event and we
-    // may well be told twice.
-    if (typeof setTrackers === 'function') setTrackers();
+    // trackers.js self-fires shortly after it loads and reads the flags above,
+    // so there is nothing further to call. Being told twice is expected -- the
+    // wrapper pushes as well as answering -- and loadMeterianScripts only ever
+    // acts once.
+    loadMeterianScripts(event.origin);
   });
 
   /*
