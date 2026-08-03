@@ -26,14 +26,16 @@ if (window !== window.top) {
 (function () {
   if (window === window.top) return;
 
-  // every Meterian environment embeds these same pages -- www, qa and the apex
-  // all serve the wrapper. Parse the origin rather than matching substrings, so
-  // a lookalike such as https://evil-meterian.io cannot pass for one of ours.
+  // every Meterian environment embeds these same pages: www, qa and the apex,
+  // under meterian.io AND meterian.com -- both are live and trackers.js has
+  // always treated them as separate properties. Parse the origin rather than
+  // matching substrings, so a lookalike such as https://evil-meterian.io or
+  // https://meterian.io.example.com cannot pass for one of ours.
   function isMeterianOrigin(origin) {
     try {
       var url = new URL(origin);
       return url.protocol === 'https:' &&
-        (url.hostname === 'meterian.io' || /\.meterian\.io$/.test(url.hostname));
+        /^([^.]+\.)*meterian\.(io|com)$/.test(url.hostname);
     } catch (e) {
       return false;
     }
@@ -43,7 +45,10 @@ if (window !== window.top) {
   // environment we were never told about; the fixed origins cover the case of a
   // referrer policy having stripped it
   function wrapperOrigins() {
-    var origins = ['https://www.meterian.io', 'https://meterian.io'];
+    var origins = [
+      'https://www.meterian.io', 'https://meterian.io',
+      'https://www.meterian.com', 'https://meterian.com'
+    ];
     try {
       var referred = new URL(document.referrer).origin;
       if (isMeterianOrigin(referred) && origins.indexOf(referred) === -1) {
