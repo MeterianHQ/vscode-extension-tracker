@@ -26,18 +26,50 @@ if (window !== window.top) {
 (function () {
   if (window === window.top) return;
 
-  var WRAPPER_ORIGINS = ['https://www.meterian.io', 'https://meterian.io'];
+  // every Meterian environment embeds these same pages -- www, qa and the apex
+  // all serve the wrapper. Parse the origin rather than matching substrings, so
+  // a lookalike such as https://evil-meterian.io cannot pass for one of ours.
+  function isMeterianOrigin(origin) {
+    try {
+      var url = new URL(origin);
+      return url.protocol === 'https:' &&
+        (url.hostname === 'meterian.io' || /\.meterian\.io$/.test(url.hostname));
+    } catch (e) {
+      return false;
+    }
+  }
+
+  // for an iframe the referrer is the embedding page, which is how we reach an
+  // environment we were never told about; the fixed origins cover the case of a
+  // referrer policy having stripped it
+  function wrapperOrigins() {
+    var origins = ['https://www.meterian.io', 'https://meterian.io'];
+    try {
+      var referred = new URL(document.referrer).origin;
+      if (isMeterianOrigin(referred) && origins.indexOf(referred) === -1) {
+        origins.unshift(referred);
+      }
+    } catch (e) { /* no referrer, fall back to the fixed list */ }
+    return origins;
+  }
+
   var MAX_ATTEMPTS = 5;
 
   var answered  = false;
   var attempts  = 0;
 
   window.addEventListener('message', function (event) {
-    if (WRAPPER_ORIGINS.indexOf(event.origin) === -1) return;
+    if (!isMeterianOrigin(event.origin)) return;
     if (!event.data || event.data.type !== 'meterian-consent') return;
 
     // a refusal is an answer too -- stop asking either way
     answered = true;
+
+    // our own hostname is the docs host, identical on every environment, so
+    // trackers.js would file all of it under one property. The wrapper tells us
+    // which environment we are in; record it before the trackers read it.
+    if (event.data.hostname) window.meterian_host_override = event.data.hostname;
+
     if (!event.data.consent) return;
 
     // the same flag trackers.js sets from its own cookies; it will not
@@ -62,7 +94,7 @@ if (window !== window.top) {
     if (answered || attempts >= MAX_ATTEMPTS) return;
     attempts++;
 
-    WRAPPER_ORIGINS.forEach(function (origin) {
+    wrapperOrigins().forEach(function (origin) {
       window.top.postMessage({ type: 'meterian-consent-request' }, origin);
     });
 
