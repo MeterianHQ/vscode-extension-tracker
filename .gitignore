@@ -1,0 +1,2 @@
+# MkDocs local build output (the live site is deployed from CI)
+site/
