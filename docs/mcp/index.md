@@ -31,9 +31,22 @@ AI assistants are pre-trained on a fixed dataset that becomes stale over time. N
 
 ## How it works
 
-When the VS Code extension activates, it automatically registers the MCP server with any supported IDEs it finds on your machine (VS Code Copilot, Cursor, Windsurf). For AI CLI tools (Claude Code, Gemini CLI, Codex CLI), use the VS Code commands or the [standalone installer](installation.md).
+When the VS Code extension activates, it automatically registers the MCP server with any supported IDEs it finds on your machine (VS Code Copilot, Cursor, Windsurf). For AI CLI tools (Claude Code, Gemini CLI, Codex CLI), use the [VS Code commands](integrations.md) or install the standalone npm package.
 
 The server communicates over **stdin/stdout** using the JSON-RPC 2.0 protocol (MCP spec version `2024-11-05`) and exposes two tools and a built-in [Security Audit Skill](skill.md).
 
 !!! note "Premium recommended"
     The MCP server works in Free mode, but Premium mode provides broader language coverage and more detailed advisory information.
+
+## Using the MCP server without VS Code
+
+The MCP server is also published as a standalone npm package, **`@meterian/mcp`**, for use with AI CLI tools and any other MCP-compatible client. It is documented separately:
+
+[Meterian MCP Server on npm &rarr;](https://meterianhq.github.io/ai-skills/mcp/){ .md-button .md-button--primary }
+
+```bash
+npm install -g @meterian/mcp
+npx @meterian/mcp install
+```
+
+See the [installation guide](https://meterianhq.github.io/ai-skills/mcp/installation/) for manual registration and supported clients.

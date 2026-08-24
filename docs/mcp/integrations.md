@@ -3,7 +3,7 @@
 The Meterian MCP server integrates with 7 AI tools and IDEs. Integration falls into two categories:
 
 - **Automatic** — the VS Code extension registers the server on startup, no action needed
-- **Manual** — use a VS Code command or the [standalone installer](installation.md)
+- **Manual** — use a VS Code command or the standalone [`@meterian/mcp` npm package](https://meterianhq.github.io/ai-skills/mcp/)
 
 ## Supported AI tools
 
@@ -12,10 +12,10 @@ The Meterian MCP server integrates with 7 AI tools and IDEs. Integration falls i
 | **VS Code** (Copilot) | Automatic on extension load | [code.visualstudio.com](https://code.visualstudio.com/) |
 | **Cursor** | Automatic on extension load | [cursor.com](https://www.cursor.com/) |
 | **Windsurf** | Automatic on extension load | [windsurf.com](https://windsurf.com/) |
-| **Claude Code** | VS Code command or standalone installer | [claude.ai/code](https://claude.ai/code) |
-| **Gemini CLI** | VS Code command or standalone installer | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) |
-| **Codex CLI** | VS Code command or standalone installer | [github.com/openai/codex](https://github.com/openai/codex) |
-| **mcp-cli** | VS Code command or standalone installer | [github.com/philschmid/mcp-cli](https://github.com/philschmid/mcp-cli) |
+| **Claude Code** | VS Code command or `@meterian/mcp` | [claude.ai/code](https://claude.ai/code) |
+| **Gemini CLI** | VS Code command or `@meterian/mcp` | [github.com/google-gemini/gemini-cli](https://github.com/google-gemini/gemini-cli) |
+| **Codex CLI** | VS Code command or `@meterian/mcp` | [github.com/openai/codex](https://github.com/openai/codex) |
+| **mcp-cli** | VS Code command or `@meterian/mcp` | [github.com/philschmid/mcp-cli](https://github.com/philschmid/mcp-cli) |
 
 ---
 
@@ -45,6 +45,9 @@ For Claude Code, Gemini CLI, Codex CLI, and mcp-cli, use the Command Palette (`C
 Both commands support: **Claude Code**, **Gemini CLI**, **Codex CLI**, **mcp-cli**.
 
 The extension searches for each CLI binary in common installation locations before falling back to `PATH`.
+
+!!! tip "No VS Code?"
+    If you work only in AI CLI tools, install the standalone [`@meterian/mcp` npm package](https://meterianhq.github.io/ai-skills/mcp/installation/) instead — it registers the same server with Claude Code, Gemini CLI and Codex CLI without needing VS Code.
 
 ---
 

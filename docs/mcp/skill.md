@@ -14,10 +14,8 @@ The skill defines three modes of operation that your AI assistant can follow:
 
 ## Skill installation
 
-The skill is installed automatically alongside the MCP server:
-
-- **Via VS Code extension:** Installed when you register the MCP server using the VS Code command
-- **Via standalone installer:** Installed as part of `install-meterian-mcp.sh`
+- **Via VS Code extension:** the skill is installed automatically when you register the MCP server using the VS Code command
+- **Without VS Code:** install it from the [Meterian AI Skills docs](https://meterianhq.github.io/ai-skills/skills/installation/) — the standalone [`@meterian/mcp`](https://meterianhq.github.io/ai-skills/mcp/installation/) package registers the server only
 
 If the skill file is missing, the MCP tools (`advisories_get`, `advisories_getnextsafe`) still work — only the pre-packaged prompt workflow is unavailable.
 

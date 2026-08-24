@@ -6,8 +6,12 @@ This is the **public issue tracker and documentation website** for the [Meterian
 
 - MkDocs-based documentation published to GitHub Pages
 - GitHub issue templates for bug reports, feature requests, and questions
-- A standalone MCP server installer script (`scripts/install-meterian-mcp.sh`)
 - Automated badge refresh CI for VS Marketplace stats
+
+The standalone MCP server is a **separate** product, published to npm as
+`@meterian/mcp` from the [`ai-skills`](https://github.com/MeterianHQ/ai-skills)
+repo and documented at <https://meterianhq.github.io/ai-skills/mcp/>. Docs here
+link to it rather than describing its installation.
 
 **Live website:** https://meterianhq.github.io/vscode-extension-tracker/
 
@@ -20,7 +24,6 @@ This is the **public issue tracker and documentation website** for the [Meterian
 | Documentation | MkDocs + Material for MkDocs theme |
 | Hosting | GitHub Pages (`gh-pages` branch, auto-deployed) |
 | CI/CD | GitHub Actions |
-| MCP installer | Bash + Node.js (for JSON parsing) |
 | Badge data | shields.io JSON format, VS Marketplace API |
 
 ---
@@ -42,14 +45,6 @@ mkdocs gh-deploy --force
 
 Normally this is done automatically by `.github/workflows/deploy-docs.yml` on every push to `main`.
 
-### Run the MCP server installer
-
-```bash
-./scripts/install-meterian-mcp.sh                     # install from OpenVSX
-./scripts/install-meterian-mcp.sh --uninstall         # remove
-./scripts/install-meterian-mcp.sh --file <path.vsix>  # install from local .vsix
-```
-
 ---
 
 ## Repository Structure
@@ -65,9 +60,6 @@ docs/               # MkDocs source — edit these for website changes
   roadmap.md        # Future plans
   faq.md            # FAQ
   assets/           # Images and logos
-
-scripts/
-  install-meterian-mcp.sh   # Standalone MCP server installer
 
 badges/             # Generated JSON badge files (do not edit manually)
 
@@ -95,7 +87,9 @@ The `gh-pages` branch is auto-managed by mkdocs — never edit it directly.
 
 ## Key Constraints
 
-- **No extension source code here.** Only docs, issue tracking, and installer scripts.
+- **No extension source code here.** Only docs and issue tracking.
+- **No MCP server installation docs here.** The standalone MCP server lives in the
+  `ai-skills` repo; link to <https://meterianhq.github.io/ai-skills/mcp/> instead.
 - **`badges/` files are auto-generated.** Do not edit them manually; they are overwritten by CI.
 - **Deployment is fully automated.** A push to `main` triggers a docs rebuild and deploy.
 - **MkDocs navigation** is defined in `mkdocs.yml` under the `nav:` key — update it when adding new pages.

@@ -39,8 +39,7 @@ nav:
     - Tools Reference: mcp/tools.md
     - AI Tool Integrations: mcp/integrations.md
     - Security Audit Skill: mcp/skill.md
-    - Standalone Installation: mcp/installation.md
-    - Manual Installation: mcp/manual-installation.md
+    - Standalone MCP Server (npm): https://meterianhq.github.io/ai-skills/mcp/
     - Prompts & Examples: mcp/prompts.md
     - What the MCP server solves: mcp/scenarios.md
   - Supported Languages: languages.md
