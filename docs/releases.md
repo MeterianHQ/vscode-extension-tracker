@@ -9,6 +9,8 @@ A security release for the results page.
 #### Safer results page
 The results page now escapes file paths, names, and advisory data. The page runs only its own script, it does not load remote images, and it opens only files inside the workspace. If the page refuses a link, a warning tells you why. We recommend that all users update to this version.
 
+Thanks to [kta1kri](https://github.com/kta1kri) for reporting this issue responsibly.
+
 ---
 
 ## 1.21.8
